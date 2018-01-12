@@ -11,6 +11,7 @@ alias gr='git rebase'
 alias ga='git add'
 alias sg='git rev-parse --short=10 HEAD'
 alias t='vim ~/.tasks'
+alias n='vim ~/.notes'
 
 alias swap='kubectl config use-context'
 alias k='kubectl'
@@ -25,7 +26,6 @@ function vim() {
     printf "\e]1;"`basename "$1"`"\a"
     /usr/local/bin/vim $1
 }
-
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
 fi

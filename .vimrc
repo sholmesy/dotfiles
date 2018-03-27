@@ -1,15 +1,17 @@
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go'
-Plug 'digitaltoad/vim-jade'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-repeat'
 Plug 'wellle/targets.vim'
 Plug 'kopischke/vim-fetch'
 Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Syntax
@@ -86,14 +88,31 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set mouse=a
 
-"fzf
-set rtp+=/usr/local/opt/fzf
-
-"TagBar
-nmap <F8> :TagbarToggle<CR>
-
 "ALE
 let g:ale_completion_enabled = 1
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
+"Terminal Title
+function! SetTerminalTitle()
+    let titleString = expand('%:t')
+    if len(titleString) > 0
+        let &titlestring = expand('%:t')
+        " this is the format iTerm2 expects when setting the window title
+        let args = "\033];".&titlestring."\007"
+        let cmd = 'silent !echo -e "'.args.'"'
+        execute cmd
+        redraw!
+    endif
+endfunction
+autocmd BufEnter * call SetTerminalTitle()
+
+"bashrc loads
+let $BASH_ENV = "~/.bash_aliases"
+
+set rtp+=/usr/local/opt/fzf
+
+nnoremap <Leader>s :e# <CR>
+nnoremap <Leader>/ :Ag <CR>
+nnoremap <Leader>db :!pgcli <CR>

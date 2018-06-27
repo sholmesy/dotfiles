@@ -1,0 +1,67 @@
+URxvt*termName:                 rxvt-256color
+URxvt*font:                     xft:Inconsolata:pixelsize=26:antialias=true:hinting=true
+Xft*antialias:                  true
+Xft*hinting:                    full
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              0
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           10
+URxvt.perl-ext-common:          default,clipboard
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
+
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!my wallpaper matching color is #24759f
+
+! special
+*foreground:   #ffffff
+*background:   #172637
+*cursorColor:  #ffffff
+*dynamicColors: on
+
+! black
+*color0:       #131313
+*color8:       #4b4b4b
+
+! red
+*color1:       #c44949
+*color9:       #ed6b6b
+
+! green
+*color2:       #76c449
+*color10:      #aced6b
+
+! yellow
+*color3:       #c49749
+*color11:      #edb76b
+
+! blue
+*color4:       #4976c4
+*color12:      #6ba1ed
+
+! magenta
+!*color5:       #c449c4
+!*color13:      #ed6bed
+*.color5:       #f8818e
+*.color13:      #fb3d66
+
+! cyan
+*color6:       #49bac4
+*color14:      #6be2ed
+
+! white
+*color7:       #cfcfcf
+*color15:      #ffffff

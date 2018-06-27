@@ -12,17 +12,16 @@ alias gl='git pull'
 alias gr='git rebase'
 alias ga='git add'
 alias sg='git rev-parse --short=10 HEAD'
-alias t='vim ~/.tasks'
-alias n='vim ~/.notes'
+alias cc='xclip -selection clipboard'
+alias pp='xclip -selection clipboard'
 
-alias swap='kubectl config use-context'
-alias k='kubectl'
 alias ag='rg -i --hidden'
-alias dc='docker-compose'
+alias dco='docker-compose'
 alias rmpyc='sudo find . -name "*.pyc" -delete'
 alias jq='python -m json.tool'
-alias l='ls'
+alias ls='ls --color=auto'
 alias pgcli='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
+alias al='alsamixer'
 
 function cls() {
     vim $(ag "class $1\(" --line-number | awk -F  ":" '{print $1":"$2}')
@@ -32,16 +31,42 @@ function fnc() {
     vim $(ag "def $1\(" --line-number | awk -F  ":" '{print $1":"$2}')
 }
 
-function vim() {
-    printf "\e]1;"`basename "$1"`"\a"
-    /usr/local/bin/vim $1
+function bright() {
+    echo $1 >| /sys/class/backlight/intel_backlight/brightness
 }
 
 function v() {
-    printf "\e]1;"`basename "$1"`"\a"
-    /usr/local/bin/vim $1
+    vim $1
 }
 
-if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-fi
+function colorgrid() {
+    iter=16
+    while [ $iter -lt 52 ]
+    do
+        second=$[$iter+36]
+        third=$[$second+36]
+        four=$[$third+36]
+        five=$[$four+36]
+        six=$[$five+36]
+        seven=$[$six+36]
+        if [ $seven -gt 250 ];then seven=$[$seven-251]; fi
+
+        echo -en "\033[38;5;$(echo $iter)m█ "
+        printf "%03d" $iter
+        echo -en "   \033[38;5;$(echo $second)m█ "
+        printf "%03d" $second
+        echo -en "   \033[38;5;$(echo $third)m█ "
+        printf "%03d" $third
+        echo -en "   \033[38;5;$(echo $four)m█ "
+        printf "%03d" $four
+        echo -en "   \033[38;5;$(echo $five)m█ "
+        printf "%03d" $five
+        echo -en "   \033[38;5;$(echo $six)m█ "
+        printf "%03d" $six
+        echo -en "   \033[38;5;$(echo $seven)m█ "
+        printf "%03d" $seven
+
+        iter=$[$iter+1]
+        printf '\r\n'
+    done
+}

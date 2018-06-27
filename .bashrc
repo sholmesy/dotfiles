@@ -1,5 +1,3 @@
-export PS1="$PS1\$(git-radar --bash --fetch): "
-
 # Sensible Bash - An attempt at saner Bash defaults
 # Maintainer: mrzool <http://mrzool.cc>
 # Repository: https://github.com/mrzool/bash-sensible

@@ -12,6 +12,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " Syntax
@@ -67,7 +69,6 @@ let &t_Co=256
 set t_Co=256
 set wildmenu
 set background=dark
-colorscheme seashell
 
 " Search
 set ignorecase
@@ -90,23 +91,6 @@ set mouse=a
 
 "ALE
 let g:ale_completion_enabled = 1
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\}
-
-"Terminal Title
-function! SetTerminalTitle()
-    let titleString = expand('%:t')
-    if len(titleString) > 0
-        let &titlestring = expand('%:t')
-        " this is the format iTerm2 expects when setting the window title
-        let args = "\033];".&titlestring."\007"
-        let cmd = 'silent !echo -e "'.args.'"'
-        execute cmd
-        redraw!
-    endif
-endfunction
-autocmd BufEnter * call SetTerminalTitle()
 
 "bashrc loads
 let $BASH_ENV = "~/.bash_aliases"
@@ -116,3 +100,4 @@ set rtp+=/usr/local/opt/fzf
 nnoremap <Leader>s :e# <CR>
 nnoremap <Leader>/ :Ag <CR>
 nnoremap <Leader>db :!pgcli <CR>
+set tags=~/Work/development/festicket/festicket/apps/tags

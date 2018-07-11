@@ -71,11 +71,11 @@
                        "x": 1457,
                        "y": 30
                     },
-                    "name": "pingpong | Festicket Slack",
+                    "name": "Festicket Slack",
                     "percent": 1,
                     "swallows": [
                        {
-                           "class": "^Chromium$",
+                           "class": "^Google\\-chrome$",
                            "name": "slack"
                        }
                     ],

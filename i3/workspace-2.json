@@ -19,7 +19,8 @@
             "percent": 1,
             "swallows": [
                {
-                   "class": "^URxvt$"
+                   "class": "^URxvt$",
+                   "name": "code"
                }
             ],
             "type": "con"

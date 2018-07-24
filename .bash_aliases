@@ -13,7 +13,6 @@ alias gr='git rebase'
 alias ga='git add'
 alias sg='git rev-parse --short=10 HEAD'
 alias cc='xclip -selection clipboard'
-alias pp='xclip -selection clipboard'
 
 alias ag='rg -i --hidden'
 alias dco='docker-compose'

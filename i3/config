@@ -21,6 +21,7 @@ set $col6 #343C48
 set $col7 #528588
 set $redO #FB3D66
 set $red1 #ED6B6B
+set $cyan #6BE2ED
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -160,7 +161,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indic   child
-client.focused          $red1   $red1   $red1   $red1   $red1
+client.focused          $cyan   $cyan   $cyan   $cyan   $cyan
 client.unfocused        $col6   $col6   $col6   $col6   $col6
 client.focused_inactive $col1   $col1   $col1   $col1   $col1
 client.urgent           $col1   $col1   $col1   $col1   $col1

@@ -6,6 +6,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
 Plug 'kopischke/vim-fetch'
 Plug 'flazz/vim-colorschemes'
@@ -39,6 +40,7 @@ autocmd Filetype vue setlocal ts=2 sts=2 sw=2
 autocmd Filetype objc setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype less setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+filetype plugin indent on
 
 " Go vim plugin stuff
 let g:go_highlight_functions = 1
@@ -69,6 +71,7 @@ let &t_Co=256
 set t_Co=256
 set wildmenu
 set background=dark
+colorscheme seashell
 
 " Search
 set ignorecase
@@ -83,10 +86,10 @@ set hlsearch
 "Ctrl-k move to the split above
 "Ctrl-l move to the split to the right
 "Ctrl-h move to the split to the left
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>
 set mouse=a
 
 "ALE
@@ -95,7 +98,8 @@ let g:ale_completion_enabled = 1
 "bashrc loads
 let $BASH_ENV = "~/.bash_aliases"
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+
 
 nnoremap <Leader>s :e# <CR>
 nnoremap <Leader>/ :Ag <CR>

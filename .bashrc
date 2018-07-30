@@ -94,3 +94,5 @@ shopt -s cdable_vars
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

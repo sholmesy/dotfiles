@@ -19,7 +19,8 @@ alias dco='docker-compose'
 alias rmpyc='sudo find . -name "*.pyc" -delete'
 alias jq='python -m json.tool'
 alias ls='ls --color=auto'
-alias pgcli='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
+alias pgfes='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
+alias pgint='pgcli postgres://integrations:integrations@127.0.0.1/integrations'
 alias al='alsamixer'
 
 function cls() {

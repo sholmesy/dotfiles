@@ -15,6 +15,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
+Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
 " Syntax
@@ -22,10 +23,11 @@ syntax enable
 set nowrap
 
 " Indenting
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
+
 
 nnoremap x "_x
 xnoremap x "_x
@@ -79,7 +81,7 @@ set smartcase
 set gdefault
 set incsearch
 set showmatch
-set hlsearch
+"set hlsearch
 
 "split navigations
 "Ctrl-j move to the split below
@@ -100,8 +102,10 @@ let $BASH_ENV = "~/.bash_aliases"
 
 set rtp+=~/.fzf
 
-
 nnoremap <Leader>s :e# <CR>
 nnoremap <Leader>/ :Ag <CR>
-nnoremap <Leader>db :!pgcli <CR>
+nnoremap <Leader>dbf :!pgfes <CR>
+nnoremap <Leader>dbi :!pgint <CR>
+
+set pastetoggle=<Leader>p
 set tags=~/Work/development/festicket/festicket/apps/tags

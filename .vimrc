@@ -16,6 +16,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Syntax
@@ -23,10 +25,10 @@ syntax enable
 set nowrap
 
 " Indenting
-"set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
-"set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 
 nnoremap x "_x
@@ -109,3 +111,4 @@ nnoremap <Leader>dbi :!pgint <CR>
 
 set pastetoggle=<Leader>p
 set tags=~/Work/development/festicket/festicket/apps/tags
+let g:airline_theme='deus'

@@ -15,7 +15,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -109,6 +108,6 @@ nnoremap <Leader>/ :Ag <CR>
 nnoremap <Leader>dbf :!pgfes <CR>
 nnoremap <Leader>dbi :!pgint <CR>
 
-set pastetoggle=<Leader>p
+nnoremap <Leader>p <F2> <CR>
 set tags=~/Work/development/festicket/festicket/apps/tags
 let g:airline_theme='deus'

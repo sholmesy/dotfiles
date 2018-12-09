@@ -2,4 +2,3 @@
 xrandr --dpi 196
 xrdb -merge ~/.Xresources
 exec i3
-

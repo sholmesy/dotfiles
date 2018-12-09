@@ -31,8 +31,8 @@ function fnc() {
     vim $(ag "def $1\(" --line-number | awk -F  ":" '{print $1":"$2}')
 }
 
-function bright() {
-    echo $1 >| /sys/class/backlight/intel_backlight/brightness
+function br() {
+    sudo vim /sys/class/backlight/acpi_video0/brightness
 }
 
 function v() {

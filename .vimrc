@@ -15,8 +15,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Syntax
@@ -110,4 +108,3 @@ nnoremap <Leader>dbi :!pgint <CR>
 
 nnoremap <Leader>p <F2> <CR>
 set tags=~/Work/development/festicket/festicket/apps/tags
-let g:airline_theme='deus'

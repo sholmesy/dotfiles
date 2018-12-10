@@ -1,2 +1,6 @@
 remove mod4 = Super_R 
 add control = Super_R
+
+! Clear the Caps Lock key
+clear Lock
+keycode 66 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift

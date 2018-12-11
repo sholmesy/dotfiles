@@ -1,4 +1,4 @@
-URxvt*termName:                 rxvt-256color
+URxvt*termName:                 xterm-256color
 URxvt*font:                     xft:Inconsolata:pixelsize=26:antialias=true:hinting=true
 Xft*antialias:                  true
 Xft*hinting:                    full
@@ -11,10 +11,6 @@ URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.internalBorder:           10
-URxvt.perl-ext-common:          default,clipboard
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-URxvt.clipboard.autocopy:       true
 
 Xft.dpi: 180
 Xft.autohint: 0

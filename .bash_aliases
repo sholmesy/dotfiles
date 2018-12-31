@@ -23,8 +23,8 @@ alias pgfes='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
 alias pgint='pgcli postgres://integrations:integrations@127.0.0.1/integrations'
 alias al='alsamixer'
 
-function note() {
-    vim ~/$(date '+%Y-%m-%d').md
+function todo() {
+    vim ~/Notes/$(date '+%Y-%m-%d').md
 }
 
 function cls() {

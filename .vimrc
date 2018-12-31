@@ -69,11 +69,10 @@ let g:netrw_liststyle=3
 set clipboard=unnamed
 filetype plugin on
 let mapleader=" "
-let &t_Co=256
 set t_Co=256
 set wildmenu
 set background=dark
-colorscheme seashell
+colorscheme default
 
 " Search
 set ignorecase
@@ -108,4 +107,4 @@ nnoremap <Leader>dbf :!pgfes <CR>
 nnoremap <Leader>dbi :!pgint <CR>
 
 nnoremap <Leader>p <F2> <CR>
-set tags=~/Work/development/festicket/festicket/apps/tags
+set tags=tags;/

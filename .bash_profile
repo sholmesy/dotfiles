@@ -17,5 +17,4 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 [ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 [ -f /usr/share/autojump/autojump.bash ] && source /usr/share/autojump/autojump.bash
 neofetch
-xmodmap ~/.Xmodmap
 xset r rate 180 40

@@ -101,10 +101,10 @@ let $BASH_ENV = "~/.bash_aliases"
 
 set rtp+=~/.fzf
 
-nnoremap <Leader>s :e# <CR>
-nnoremap <Leader>/ :Ag <CR>
+nnoremap <Leader>/ :Rg <CR>
 nnoremap <Leader>dbf :!pgfes <CR>
 nnoremap <Leader>dbi :!pgint <CR>
 
-nnoremap <Leader>p <F2> <CR>
+nnoremap <Leader>s :e#<CR>
+nnoremap <Leader>t :Tags<CR>
 set tags=tags;/

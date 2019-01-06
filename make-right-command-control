@@ -1,0 +1,6 @@
+remove Control = Control_R
+remove Mod1 = Super_R
+remove Mod4 = Super_R
+keycode 134 = Super_R
+keycode 108 = Control_R
+add Control = Super_R

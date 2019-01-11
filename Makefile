@@ -18,15 +18,17 @@ bash:
 	chown sam:sam /home/sam/.bash_profile
 	chown sam:sam /home/sam/.bashrc
 	chown sam:sam /home/sam/.bash_aliases
-	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig --noconfirm
+	sudo -H -u sam bash -c 'git config --global core.excludesfile /home/sam/.gitignore_global'
+	sudo -H -u sam bash -c 'git config --global user.name "Sam Holmes"'
+	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
+	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig ctags --noconfirm
 x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
-i3:
-	pacman -S i3-gaps --noconfirm
+window-manager:
+	pacman -S i3-gaps --noconfirm --ignore cronie
 	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
-
 urxvt:
 	cp .Xresources /home/sam/
 	xrdb /home/sam/.Xresources
@@ -34,4 +36,11 @@ urxvt:
 	pacman -S rxvt-unicode --noconfirm
 keyboard:
 	cp mac-keyboard.sh /usr/local/bin
-	cp pc-keyboard.sh /usr/local/bin
+	cp thinkpad-keyboard.sh /usr/local/bin
+	cp pok3r-keyboard.sh /usr/local/bin
+ssh:
+	sudo -H -u sam bash -c 'ssh-keygen'
+	sudo -H -u sam bash -c 'cat ~/.ssh/id_rsa.pub'
+apps:
+	pacman -S aurman --noconfirm
+	sudo -H -u sam bash -c 'aurman -S google-chrome discord slack-desktop --noconfirm'

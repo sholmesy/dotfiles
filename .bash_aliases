@@ -23,10 +23,6 @@ alias pgfes='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
 alias pgint='pgcli postgres://integrations:integrations@127.0.0.1/integrations'
 alias al='alsamixer'
 
-function todo() {
-    vim ~/Notes/$(date '+%Y-%m-%d').md
-}
-
 function cls() {
     vim $(ag "class $1\(" --line-number | awk -F  ":" '{print $1":"$2}')
 }

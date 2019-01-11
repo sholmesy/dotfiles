@@ -167,20 +167,8 @@ client.focused_inactive $col1   $col1   $col1   $col1   $col1
 client.urgent           $col1   $col1   $col1   $col1   $col1
 
 
-exec --no-startup-id xset r rate 150 50
-exec --no-startup-id setxkbmap -layout us -option ctrl:swap_lwin_lctl
-
-exec i3-msg "workspace 1; append_layout ~/.config/i3/workspace-1.json"
-exec i3-msg "workspace 2; append_layout ~/.config/i3/workspace-2.json"
-exec i3-msg "workspace 3; append_layout ~/.config/i3/workspace-3.json"
+exec --no-startup-id xset r rate 180 40
 
 exec i3-msg "exec --no-startup-id urxvt"
-exec i3-msg "exec --no-startup-id urxvt"
-exec i3-msg "exec --no-startup-id urxvt"
-
-exec i3-msg "exec --no-startup-id google-chrome-stable --app=https://festicket.slack.com"
-exec i3-msg "exec --no-startup-id google-chrome-stable"
-
-exec feh --bg-scale ~/Pictures/monument_valley_5k.jpg
 
 for_window [class="^.*"] border pixel 2

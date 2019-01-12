@@ -21,7 +21,9 @@ bash:
 	sudo -H -u sam bash -c 'git config --global core.excludesfile /home/sam/.gitignore_global'
 	sudo -H -u sam bash -c 'git config --global user.name "Sam Holmes"'
 	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
-	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig ctags --noconfirm
+	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig ctags rofi --noconfirm
+	pacman -S aurman --noconfirm
+	sudo -H -u sam bash -c 'aurman -S polybar --noconfirm'
 x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
@@ -38,6 +40,9 @@ keyboard:
 	cp mac-keyboard.sh /usr/local/bin
 	cp thinkpad-keyboard.sh /usr/local/bin
 	cp pok3r-keyboard.sh /usr/local/bin
+	cp anne-pro.sh /usr/local/bin
+	cp kbdmap /usr/share/X11/xkb/symbols/us
+	@echo 'xkb symbols need a reboot to fully take effect'
 ssh:
 	sudo -H -u sam bash -c 'ssh-keygen'
 	sudo -H -u sam bash -c 'cat ~/.ssh/id_rsa.pub'

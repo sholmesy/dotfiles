@@ -88,11 +88,7 @@ CDPATH="."
 # This allows you to bookmark your favorite places across the file system
 # Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
 shopt -s cdable_vars
-
-# Examples:
-# export dotfiles="$HOME/dotfiles"
-# export projects="$HOME/projects"
-# export documents="$HOME/Documents"
-# export dropbox="$HOME/Dropbox"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -f ~/.bash_profile ]] && source ~/.bash_profile
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/autojump/autojump.bash ] && source /usr/share/autojump/autojump.bash

@@ -1,257 +1,65 @@
-URxvt*termName:                 xterm-256color
-URxvt*font:                     xft:inconsolata:pixelsize=20:antialias=true:hinting=true
-Xft*antialias:                  true
-Xft*hinting:                    full
-URxvt.depth:                    32
-URxvt*lineSpace:                1
-URxvt.letterSpace:              0
-URxvt.iso14755:                 false
-URxvt.iso14755_52:              false
-URxvt*geometry:                 65x17
-URxvt.scrollBar:                false
-URxvt*loginShell:               true
-URxvt.internalBorder:           10
+!  /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$$
+! |  $$ /$$/ /$$__  $$ /$$__  $$ /$$_____/ /$$__  $$| $$  | $$ /$$__  $$ /$$_____/ /$$__  $$ /$$_____/
+!  \  $$$$/ | $$  \__/| $$$$$$$$|  $$$$$$ | $$  \ $$| $$  | $$| $$  \__/| $$      | $$$$$$$$|  $$$$$$ 
+!   >$$  $$ | $$      | $$_____/ \____  $$| $$  | $$| $$  | $$| $$      | $$      | $$_____/ \____  $$
+!  /$$/\  $$| $$      |  $$$$$$$ /$$$$$$$/|  $$$$$$/|  $$$$$$/| $$      |  $$$$$$$|  $$$$$$$ /$$$$$$$/
+! |__/  \__/|__/       \_______/|_______/  \______/  \______/ |__/       \_______/ \_______/|_______/ 
 
-Xft.dpi: 180
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-!Xft.rgba: rgb
+*.cursorBlink       : 1
+*.font              : xft:spacemono:size=12
+*.boldfont          : xft:spacemono:size=12
+*.letterSpace       : -0.5
+*.scrollBar         : false
+*.internalBorder    : 15
+*.cursorUnderline   : true
+*.geometry          : 65x10
+*.perl-ext-common   : selection-to-clipboard
+*.url-launcher      : google-chrome-stable
 
-!my wallpaper matching color is #24759f
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-!! special
-!*foreground:   #ffffff
-!*background:   #172637
-!*cursorColor:  #ffffff
-!*dynamicColors: on
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
 
-!! black
-!*color0:       #131313
-!*color8:       #4b4b4b
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
 
-!! red
-!*color1:       #c44949
-!*color9:       #ed6b6b
+rofi.font: spacemono regular 12
+rofi.boldfont: spacemono bold 12
+rofi.color-window: nord1, nord1, nord0
 
-!! green
-!*color2:       #76c449
-!*color10:      #aced6b
+rofi.color-normal:  nord1, nord5, nord1, nord1, nord7
+rofi.color-active:  nord1, nord13, nord1, nord1, nord13
+rofi.color-urgent:  nord1, nord8, nord1, nord1, nord8
 
-!! yellow
-!*color3:       #c49749
-!*color11:      #edb76b
-
-!! blue
-!*color4:       #4976c4
-!*color12:      #6ba1ed
-
-!! magenta
-!!*color5:       #c449c4
-!!*color13:      #ed6bed
-!*.color5:       #f8818e
-!*.color13:      #fb3d66
-
-!! cyan
-!*color6:       #49bac4
-!*color14:      #6be2ed
-
-!! white
-!*color7:       #cfcfcf
-!*color15:      #ffffff
-
-!!TomorrowNightBlue
-!#define t_background        #002451
-!#define t_current_line      #00346e
-!#define t_selection      	#003f8e
-!#define t_foreground      	#ffffff
-!#define t_comment	     	#7285b7
-!#define t_red		     	#ff9da4
-!#define t_orange	     	#ffc58f
-!#define t_yellow        	#ffeead
-!#define t_green	        	#d1f1a9
-!#define t_aqua	        	#99ffff
-!#define t_blue	        	#bbdaff
-!#define t_purple        	#ebbbff
-
-
-!*.foreground:   t_foreground
-!*.background:   t_background
-!*.cursorColor:  #aeafad
-
-!! Black / Grey
-!*.color0:       #000000
-!*.color8:       #666666
-
-!! Red / Bright Red
-!*.color1:       t_red
-!*.color9:       #FF3334
-
-!! Green + Bright Green
-!*.color2:       t_green
-!*.color10:      #9ec400
-
-!! Yellow (Orange) + Bright Yellow (Yellow)
-!*.color3:       t_orange
-!*.color11:      t_yellow
-
-!! Blue + Bright Blue
-!*.color4:       t_blue
-!*.color12:      t_blue
-
-!! Magenta (Purple) + Bright Magenta
-!*.color5:       t_purple
-!*.color13:      #b777e0
-
-!! Cyan (Aqua) + Bright Cyan
-!*.color6:       t_aqua
-!*.color14:      #54ced6
-
-!! Light Grey (Selection) + White (Current Line)
-!*.color7:       t_selection
-!*.color15:      t_current_line
-
-!!TomorrowNight
-!#define t_background        #1d1f21
-!#define t_current_line      #282a2e
-!#define t_selection      	#373b41
-!#define t_foreground      	#c5c8c6
-!#define t_comment	     	#969896
-!#define t_red		     	#cc6666
-!#define t_orange	     	#de935f
-!#define t_yellow        	#f0c674
-!#define t_green	        	#b5bd68
-!#define t_aqua	        	#8abeb7
-!#define t_blue	        	#81a2be
-!#define t_purple        	#b294bb
-
-
-!*.foreground:   t_foreground
-!*.background:   t_background
-!*.cursorColor:  #aeafad
-
-!! Black / Grey
-!*.color0:       #000000
-!*.color8:       #666666
-
-!! Red / Bright Red
-!*.color1:       t_red
-!*.color9:       #FF3334
-
-!! Green + Bright Green
-!*.color2:       t_green
-!*.color10:      #9ec400
-
-!! Yellow (Orange) + Bright Yellow (Yellow)
-!*.color3:       t_orange
-!*.color11:      t_yellow
-
-!! Blue + Bright Blue
-!*.color4:       t_blue
-!*.color12:      t_blue
-
-!! Magenta (Purple) + Bright Magenta
-!*.color5:       t_purple
-!*.color13:      #b777e0
-
-!! Cyan (Aqua) + Bright Cyan
-!*.color6:       t_aqua
-!*.color14:      #54ced6
-
-!! Light Grey (Selection) + White (Current Line)
-!*.color7:       t_selection
-!*.color15:      t_current_line
-
-!*background:	#1D1F28
-!*foreground:	#FDFDFD
-!*cursorColor:	#C574DD
-!*color0:	#282A36
-!*color1:	#F37F97
-!*color2:	#5ADECD
-!*color3:	#F2A272
-!*color4:	#8897F4
-!*color5:	#C574DD
-!*color6:	#79E6F3
-!*color7:	#FDFDFD
-!*color8:	#414458
-!*color9:	#FF4971
-!*color10:	#18E3C8
-!*color11:	#FF8037
-!*color12:	#556FFF
-!*color13:	#B043D1
-!*color14:	#3FDCEE
-!*color15:	#BEBEC1
-
-! Special
-*background:    #1d1f21
-*foreground:    #c5c8c6
-*.cursorColor:  #c5c8c6
-*transparent:   true
-*shading:       30
-
-!! black
-!*color0: #1d282f
-!*color8: #344048
-
-!! red
-!*color1: #6b3659
-!*color9: #874272
-
-!! Green
-!*color2: #396f5e
-!*color10: #448773
-
-!! Yellow
-!*color3: #cbd59a
-!*color11: #f0f8c9
-
-!! Blue
-!*color4: #364670
-!*color12: #455a8e
-
-!! Magenta
-!*color5:  #613a73
-!*color13: #794b87
-
-!! Cyan
-!*color6: #1c6689
-!*color14: #207ba2
-
-!! White
-!*color7:  #93cfbd
-!*color15: #b8eadb
-
-
-! black
-*color0: #282a2e
-*color8: #373b41
-
-! red
-*color1: #a54242
-*color9: #cc6666
-
-! green
-*color2: #8c9440
-*color10: #b5bd68
-
-! yellow
-*color3: #de935f
-*color11: #f0c674
-
-! blue
-*color4: #5f819d
-*color12: #81a2be
-
-! magenta
-*color5: #85678f
-*color13: #b294bb
-
-! cyan
-*color6: #5e8d87
-*color14: #8abeb7
-
-! white
-*color7: #ececec
-*color15: #c5c8c6
+rofi.separator-style: solid

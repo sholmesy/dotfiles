@@ -37,10 +37,10 @@ urxvt:
 	chown sam:sam /home/sam/.Xresources
 	pacman -S rxvt-unicode --noconfirm
 keyboard:
+	cp .Xmodmap /home/sam/.Xmodmap
 	cp mac-keyboard.sh /usr/local/bin
 	cp thinkpad-keyboard.sh /usr/local/bin
 	cp pok3r-keyboard.sh /usr/local/bin
-	cp anne-pro.sh /usr/local/bin
 	cp kbdmap /usr/share/X11/xkb/symbols/us
 	@echo 'xkb symbols need a reboot to fully take effect'
 ssh:

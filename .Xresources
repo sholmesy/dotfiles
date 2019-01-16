@@ -54,8 +54,8 @@
 *.color14: nord7
 *.color15: nord6
 
-rofi.font: spacemono regular 12
-rofi.boldfont: spacemono bold 12
+rofi.font: spacemono regular 10
+rofi.boldfont: spacemono bold 10
 rofi.color-window: nord1, nord1, nord0
 
 rofi.color-normal:  nord1, nord5, nord1, nord1, nord7

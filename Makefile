@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard ssh apps
+all: vim bash x window-manager urxvt keyboard ssh apps power-management development
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -21,7 +21,7 @@ bash:
 	sudo -H -u sam bash -c 'git config --global core.excludesfile /home/sam/.gitignore_global'
 	sudo -H -u sam bash -c 'git config --global user.name "Sam Holmes"'
 	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
-	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig ctags rofi --noconfirm
+	pacman -S ripgrep xclip fzf neofetch autojump ranger tig ctags rofi feh --noconfirm
 	pacman -S aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S ttf-spacemono --noconfirm'
 x:
@@ -49,5 +49,11 @@ ssh:
 apps:
 	pacman -S aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S google-chrome discord slack-desktop --noconfirm'
+power-management:
+	pacman -S powertop tlp --noconfirm
+	systemctl enable tlp.service
+	systemctl enable tlp-sleep.service
+development:
+	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
 
 .PHONY: all

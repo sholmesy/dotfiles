@@ -41,17 +41,18 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord0 $nord14
+client.focused $nord1 $nord0 $nord4 $nord11 $nord11
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
 
 # windows
-for_window [class=".*"] border pixel 4
+for_window [class=".*"] border pixel 2
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 
 # misc
 exec xset r rate 180 40
 exec xrdb .Xresources
+exec feh --bg-scale /home/sam/Pictures/wallhaven-295990.png
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 
@@ -62,7 +63,7 @@ gaps outer 10
 
 # no gaps when only one window is open
 
-smart_gaps on
+# smart_gaps on
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 
@@ -74,10 +75,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 1px
+bindsym $mod+Shift+j move down 1px
+bindsym $mod+Shift+k move up 1px
+bindsym $mod+Shift+l move right 1px
 
 # split
 
@@ -92,12 +93,18 @@ bindsym $mod+e layout toggle split
 
 # resize
 
-set $size 1 px or 1 ppt
+set $size 5 px or 5 ppt
+set $small-size 1 px or 1 ppt
+
 mode "resize" {
-    bindsym h resize shrink width $size
-        bindsym j resize grow height $size
-        bindsym k resize shrink height $size
-        bindsym l resize grow width $size
+        bindsym shift+h resize shrink width $size
+        bindsym shift+j resize grow height $size
+        bindsym shift+k resize shrink height $size
+        bindsym shift+l resize grow width $size
+        bindsym h resize shrink width $small-size
+        bindsym j resize grow height $small-size
+        bindsym k resize shrink height $small-size
+        bindsym l resize grow width $small-size
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
@@ -137,6 +144,7 @@ bindsym $mod+Shift+m floating toggle
 bindsym $mod+m focus mode_toggle
 bindsym $mod+q kill
 bindsym $mod+Return exec urxvt
+bindsym $mod+t exec google-chrome-stable --app=https://notion.so
 bindsym $mod+space exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart

@@ -72,7 +72,7 @@ let mapleader=" "
 set t_Co=256
 set wildmenu
 set background=dark
-colorscheme default
+colorscheme nord
 
 " Search
 set ignorecase

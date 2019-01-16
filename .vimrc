@@ -108,3 +108,5 @@ nnoremap <Leader>dbi :!pgint <CR>
 nnoremap <Leader>s :e#<CR>
 nnoremap <Leader>t :Tags<CR>
 set tags=tags;/
+set undofile
+set undodir=~/.vim/undodir

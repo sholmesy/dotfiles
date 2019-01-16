@@ -3,7 +3,7 @@ vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
 	curl -fLo /home/sam/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	mkdir /home/sam/.vim/undodir/
+	mkdir -p /home/sam/.vim/undodir/
 	chown sam:sam /home/sam/.vimrc
 	chown -R sam:sam /home/sam/.vim/
 bash:
@@ -28,7 +28,7 @@ x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
 window-manager:
-	pacman -S i3-gaps --noconfirm --ignore cronie
+	pacman -S i3-gaps
 	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
 urxvt:

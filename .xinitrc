@@ -1,4 +1,4 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-xrandr --dpi 196
+xrandr --dpi 220
 xrdb -merge ~/.Xresources
 exec i3

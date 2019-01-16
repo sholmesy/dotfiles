@@ -1,5 +1,4 @@
-all:
-
+all: vim bash x window-manager urxvt keyboard ssh apps
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -23,7 +22,7 @@ bash:
 	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
 	pacman -S ripgrep xclip fzf neofetch autojump docker docker-compose ranger tig ctags rofi --noconfirm
 	pacman -S aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S polybar --noconfirm'
+	sudo -H -u sam bash -c 'aurman -S ttf-spacemono --noconfirm'
 x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
@@ -49,3 +48,5 @@ ssh:
 apps:
 	pacman -S aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S google-chrome discord slack-desktop --noconfirm'
+
+.PHONY: all

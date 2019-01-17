@@ -41,7 +41,7 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord11 $nord11
+client.focused $nord1 $nord0 $nord4 $nord9 $nord9
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
 
 # windows
@@ -145,8 +145,16 @@ bindsym $mod+m focus mode_toggle
 bindsym $mod+q kill
 bindsym $mod+Return exec urxvt
 bindsym $mod+t exec google-chrome-stable --app=https://notion.so
+bindsym $mod+i exec google-chrome-stable --app=https://inbox.google.com/u/0
 bindsym $mod+space exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
+#
+# Workspace 1
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/sam/dotfiles/i3/workspace-1.json'"
+exec slack
+exec urxvt -e tty-clock -D -c -C6 -d 10
+exec urxvt -e htop
+exec google-chrome-stable --app=https://notion.so

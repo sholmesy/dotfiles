@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard ssh apps power-management development
+all: vim bash x window-manager urxvt keyboard ssh apps power-management development wifi
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -29,6 +29,7 @@ x:
 	chown sam:sam /home/sam/.xinitrc
 window-manager:
 	pacman -S i3-gaps
+	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 --noconfirm'
 	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
 urxvt:
@@ -40,7 +41,6 @@ keyboard:
 	cp .Xmodmap /home/sam/.Xmodmap
 	cp mac-keyboard.sh /usr/local/bin
 	cp thinkpad-keyboard.sh /usr/local/bin
-	cp pok3r-keyboard.sh /usr/local/bin
 	cp kbdmap /usr/share/X11/xkb/symbols/us
 	@echo 'xkb symbols need a reboot to fully take effect'
 ssh:
@@ -55,5 +55,7 @@ power-management:
 	systemctl enable tlp-sleep.service
 development:
 	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
+wifi:
+	cp restart-wifi.sh /usr/local/bin
 
 .PHONY: all

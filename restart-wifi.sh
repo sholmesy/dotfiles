@@ -5,5 +5,5 @@ if [[ $EUID -ne 0 ]]; then
 fi
 killall wpa_supplicant
 killall dhcpcd
-wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf 
-dhcpcd wlp3s0
+sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf 
+sudo dhcpcd wlp3s0

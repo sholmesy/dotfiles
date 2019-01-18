@@ -80,7 +80,7 @@ set smartcase
 set gdefault
 set incsearch
 set showmatch
-"set hlsearch
+set hlsearch
 
 "split navigations
 "Ctrl-j move to the split below

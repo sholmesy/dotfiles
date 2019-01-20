@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard ssh apps power-management development wifi
+all: vim bash x window-manager urxvt keyboard ssh apps power-management development
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -55,7 +55,4 @@ power-management:
 	systemctl enable tlp-sleep.service
 development:
 	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
-wifi:
-	cp restart-wifi.sh /usr/local/bin
-
 .PHONY: all

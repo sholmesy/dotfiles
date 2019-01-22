@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard ssh apps power-management development
+all: vim bash x window-manager urxvt keyboard ssh apps power-management development bluetooth
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -55,4 +55,11 @@ power-management:
 	systemctl enable tlp-sleep.service
 development:
 	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
+	sudo -H -u sam bash -c 'aurman -S pgcli --noconfirm'
+bluetooth:
+	pacman -Syu  pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils
+	rfkill block all
+	btmgmt ssp of
+	gpasswd -a sam lp
+	rfkill unblock all
 .PHONY: all

@@ -41,11 +41,11 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord9 $nord9
+client.focused $nord1 $nord0 $nord4 $nord14 $nord14
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
 
 # windows
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 4
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 

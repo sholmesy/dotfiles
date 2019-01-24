@@ -15,6 +15,9 @@
 *.geometry          : 65x10
 *.perl-ext-common   : selection-to-clipboard
 *.url-launcher      : google-chrome-stable
+*.pointerBlank      : True
+*.pointerBlankDelay : 1
+*.saveLines         : 8192
 
 #define nord0 #2E3440
 #define nord1 #3B4252

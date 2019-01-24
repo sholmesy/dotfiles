@@ -1,102 +1,124 @@
+// vim:ts=4:sw=4:et
 {
+    // splith split container with 2 children
     "border": "normal",
     "floating": "auto_off",
-    "layout": "splitv",
-    "percent": 0.61,
+    "layout": "splith",
+    "percent": 1,
     "type": "con",
     "nodes": [
         {
             "border": "pixel",
-            "current_border_width": 2,
+            "current_border_width": 4,
             "floating": "auto_off",
             "geometry": {
-               "height": 1249,
-               "width": 1411,
-               "x": 0,
-               "y": 0
+               "height": 1684,
+               "width": 1817,
+               "x": 58,
+               "y": 58
             },
-            "name": "Slack - Festicket",
-            "percent": 1,
+            "name": "Slack - GhostS1",
+            "percent": 0.68,
             "swallows": [
                {
                    "class": "^Slack$"
                }
             ],
             "type": "con"
-        }
-    ]
-}
-
-{
-    "border": "normal",
-    "floating": "auto_off",
-    "layout": "splitv",
-    "percent": 0.39,
-    "type": "con",
-    "nodes": [
+        },
         {
+            // splitv split container with 1 children
             "border": "normal",
             "floating": "auto_off",
             "layout": "splitv",
-            "percent": 1,
+            "percent": 0.32,
             "type": "con",
             "nodes": [
                 {
-                    "border": "pixel",
-                    "current_border_width": 2,
+                    // splitv split container with 4 children
+                    "border": "normal",
                     "floating": "auto_off",
-                    "geometry": {
-                       "height": 310,
-                       "width": 810,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "sam@sam:~",
-                    "percent": 0.163333333333333,
-                    "swallows": [
-                       {
-                           "class": "^URxvt$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "pixel",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 350,
-                       "width": 940,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "sam@sam:~",
-                    "percent": 0.163333333333333,
-                    "swallows": [
-                       {
-                           "class": "^URxvt$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "pixel",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 1211,
-                       "width": 1094,
-                       "x": 1764,
-                       "y": 567
-                    },
-                    "name": "Tasks",
-                    "percent": 0.673333333333334,
-                    "swallows": [
-                       {
-                           "class": "^Google\\-chrome$"
-                       }
-                    ],
-                    "type": "con"
+                    "layout": "splitv",
+                    "percent": 1,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "current_border_width": 4,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 1684,
+                               "width": 1356,
+                               "x": 1466,
+                               "y": 58
+                            },
+                            "name": "Ground Up 005 - Leaving Corporate w/ Jacob Sokol - YouTube",
+                            "percent": 0.113333333333333,
+                            "swallows": [
+                               {
+                                   "class": "^Google\\-chrome$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 4,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 350,
+                               "width": 940,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "sam@sam:~",
+                            "percent": 0.193333333333333,
+                            "swallows": [
+                               {
+                                   "class": "^URxvt$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 4,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 350,
+                               "width": 940,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "cava",
+                            "percent": 0.193333333333333,
+                            "swallows": [
+                               {
+                                   "class": "^URxvt$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 4,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 382,
+                               "width": 814,
+                               "x": 1992,
+                               "y": 916
+                            },
+                            "name": "Tasks",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                                   "class": "^Google\\-chrome$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
                 }
             ]
         }

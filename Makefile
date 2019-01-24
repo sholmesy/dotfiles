@@ -23,7 +23,7 @@ bash:
 	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
 	pacman -S ripgrep xclip fzf neofetch autojump ranger tig ctags rofi feh --noconfirm
 	pacman -S aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S ttf-spacemono --noconfirm'
+	sudo -H -u sam bash -c 'aurman -S ttf-spacemono cava --noconfirm'
 x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
@@ -32,6 +32,7 @@ window-manager:
 	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 --noconfirm'
 	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
+	cp i3/workspace-1.json /home/sam/.config/i3/workspace-1.json
 urxvt:
 	cp .Xresources /home/sam/
 	xrdb /home/sam/.Xresources
@@ -49,6 +50,13 @@ ssh:
 apps:
 	pacman -S aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S google-chrome discord slack-desktop --noconfirm'
+chromium:
+	cp scripts/github.sh /usr/local/bin
+	cp scripts/hn.sh /usr/local/bin
+	cp scripts/jira.sh /usr/local/bin
+	cp scripts/messenger.sh /usr/local/bin
+	cp scripts/reddit.sh /usr/local/bin
+	cp scripts/youtube.sh /usr/local/bin
 power-management:
 	pacman -S powertop tlp --noconfirm
 	systemctl enable tlp.service

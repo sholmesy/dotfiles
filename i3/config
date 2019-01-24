@@ -41,8 +41,12 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord14 $nord14
+client.focused $nord1 $nord0 $nord4 $nord7 $nord7
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
+client.focused_inactive $nord1 $nord0 $nord4 $nord0 $nord0
+client.urgent $nord1 $nord0 $nord4 $nord0 $nord0
+client.placeholder $nord1 $nord0 $nord4 $nord0 $nord0
+
 
 # windows
 for_window [class=".*"] border pixel 4
@@ -58,8 +62,8 @@ exec feh --bg-scale /home/sam/Pictures/wallhaven-295990.png
 
 # gaps
 
-gaps inner 10
-gaps outer 10
+gaps inner 75
+gaps outer 0
 
 # no gaps when only one window is open
 
@@ -145,16 +149,12 @@ bindsym $mod+m focus mode_toggle
 bindsym $mod+q kill
 bindsym $mod+Return exec urxvt
 bindsym $mod+t exec google-chrome-stable --app=https://notion.so
-bindsym $mod+i exec google-chrome-stable --app=https://inbox.google.com/u/0
+bindsym $mod+g exec google-chrome-stable --app=https://google.com
 bindsym $mod+space exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
-#
+
 # Workspace 1
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/sam/dotfiles/i3/workspace-1.json'"
-exec slack
-exec urxvt -e tty-clock -D -c -C6 -d 10
-exec urxvt -e htop
-exec google-chrome-stable --app=https://notion.so
+exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'

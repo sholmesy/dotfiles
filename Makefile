@@ -38,6 +38,7 @@ urxvt:
 	xrdb /home/sam/.Xresources
 	chown sam:sam /home/sam/.Xresources
 	pacman -S python-pywal rxvt-unicode --noconfirm
+	wal -i orange-colors.jpg
 keyboard:
 	cp .Xmodmap /home/sam/.Xmodmap
 	cp scripts/mac-keyboard.sh /usr/local/bin

@@ -56,13 +56,13 @@ for_window [class=".*"] border pixel 4
 # misc
 exec xset r rate 180 40
 exec xrdb .Xresources
-exec feh --bg-scale /home/sam/Pictures/CA63Qkm.jpg
+exec wal -i /home/sam/dotfiles/orange-colors.jpg
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 
 # gaps
 
-gaps inner 75
+gaps inner 30
 gaps outer 0
 
 # no gaps when only one window is open

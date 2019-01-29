@@ -4,10 +4,10 @@
 !   >$$  $$ | $$      | $$_____/ \____  $$| $$  | $$| $$  | $$| $$      | $$      | $$_____/ \____  $$
 !  /$$/\  $$| $$      |  $$$$$$$ /$$$$$$$/|  $$$$$$/|  $$$$$$/| $$      |  $$$$$$$|  $$$$$$$ /$$$$$$$/
 ! |__/  \__/|__/       \_______/|_______/  \______/  \______/ |__/       \_______/ \_______/|_______/ 
-
+!
 *.cursorBlink       : 1
-*.font              : xft:spacemono:size=16
-*.boldfont          : xft:spacemono:size=16
+*.font              : xft:spacemono:size=12
+*.boldfont          : xft:spacemono:size=12
 *.letterSpace       : 0
 *.scrollBar         : false
 *.internalBorder    : 15
@@ -19,50 +19,114 @@
 *.pointerBlankDelay : 1
 *.saveLines         : 8192
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! NORD
+!#define nord0 #2E3440
+!#define nord1 #3B4252
+!#define nord2 #434C5E
+!#define nord3 #4C566A
+!#define nord4 #D8DEE9
+!#define nord5 #E5E9F0
+!#define nord6 #ECEFF4
+!#define nord7 #8FBCBB
+!#define nord8 #88C0D0
+!#define nord9 #81A1C1
+!#define nord10 #5E81AC
+!#define nord11 #BF616A
+!#define nord12 #D08770
+!#define nord13 #EBCB8B
+!#define nord14 #A3BE8C
+!#define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
+!*.foreground:   nord4
+!*.background:   nord0
+!*.cursorColor:  nord4
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+!*.color0: nord1
+!*.color1: nord11
+!*.color2: nord14
+!*.color3: nord13
+!*.color4: nord9
+!*.color5: nord15
+!*.color6: nord8
+!*.color7: nord5
+!*.color8: nord3
+!*.color9: nord11
+!*.color10: nord14
+!*.color11: nord13
+!*.color12: nord9
+!*.color13: nord15
+!*.color14: nord7
+!*.color15: nord6
 
-rofi.font: spacemono regular 16
-rofi.boldfont: spacemono bold 16
-rofi.color-window: nord1, nord1, nord0
+!rofi.font: spacemono regular 16
+!rofi.boldfont: spacemono bold 16
+!rofi.color-window: nord1, nord1, nord0
 
-rofi.color-normal:  nord1, nord5, nord1, nord1, nord7
-rofi.color-active:  nord1, nord13, nord1, nord1, nord13
-rofi.color-urgent:  nord1, nord8, nord1, nord1, nord8
+!rofi.color-normal:  nord1, nord5, nord1, nord1, nord7
+!rofi.color-active:  nord1, nord13, nord1, nord1, nord13
+!rofi.color-urgent:  nord1, nord8, nord1, nord1, nord8
 
-rofi.separator-style: solid
+!rofi.separator-style: solid
+
+! OUTRUN 
+
+*.background: #0d0917
+ 
+!! fake transparancy
+!URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+!URxvt*.shading: 35
+ 
+!URxvt.font: xft:DejaVu Sans Mono for Powerline:size=9
+!URxvt.font: -*-terminesspowerline-medium-*-*-*-*-*-72-*-*-*-*-*
+!URxvt.font: -*-terminesspowerline-medium-*-*-*-*-*-100-*-*-*-*-*
+!URxvt.letterSpace: -1
+ 
+!!{{{ colors - brighter jwk:
+!!brighter jwr
+ 
+! special
+*.foreground:   #94aef2
+!*.background:   #000000
+*.cursorColor:  #94aef2
+ 
+! black
+*.color0:       #151515
+*.color8:       #3d3d3d
+ 
+! red
+*.color1:       #b92a6a
+*.color9:       #da0c68
+ 
+! green
+*.color2:       #0e9999
+*.color10:      #19c2c2
+ 
+! yellow
+*.color3:       #3b3bab
+*.color11:      #5959e7
+ 
+! blue
+*.color4:       #105bad
+*.color12:      #227cdf
+ 
+! magenta
+*.color5:       #582fa6
+*.color13:      #6737c2
+ 
+! cyan
+*.color6:       #266da2
+*.color14:      #6096bf
+ 
+! white
+*.color7:       #899ca1
+*.color15:      #c0c0c0
+ 
+rofi.color-enabled: true
+rofi.color-window: #101010, #3991f1, #6833ff
+rofi.color-normal: #101010, #ffffff, #181818, #6833ff, #ffffff
+rofi.color-active: #101010, #6833ff, #181818, #6833ff, #ffffff
+rofi.color-urgent: #101010, #f3843d, #181818, #6833ff, #ffc39c
+rofi.bw: 2
+rofi.width: -80
+rofi.scroll-method: 1

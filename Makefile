@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard ssh apps power-management development bluetooth
+all: vim bash x window-manager urxvt keyboard apps power-management development bluetooth
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -40,23 +40,14 @@ urxvt:
 	pacman -S python-pywal rxvt-unicode --noconfirm
 keyboard:
 	cp .Xmodmap /home/sam/.Xmodmap
-	cp mac-keyboard.sh /usr/local/bin
-	cp thinkpad-keyboard.sh /usr/local/bin
+	cp scripts/mac-keyboard.sh /usr/local/bin
+	cp scripts/thinkpad-keyboard.sh /usr/local/bin
+	cp scripts/anne-pro.sh /usr/local/bin
 	cp kbdmap /usr/share/X11/xkb/symbols/us
 	@echo 'xkb symbols need a reboot to fully take effect'
-ssh:
-	sudo -H -u sam bash -c 'ssh-keygen'
-	sudo -H -u sam bash -c 'cat ~/.ssh/id_rsa.pub'
 apps:
 	pacman -S hicolor-icon-theme chromium aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
-chromium:
-	cp scripts/github.sh /usr/local/bin
-	cp scripts/hn.sh /usr/local/bin
-	cp scripts/jira.sh /usr/local/bin
-	cp scripts/messenger.sh /usr/local/bin
-	cp scripts/reddit.sh /usr/local/bin
-	cp scripts/youtube.sh /usr/local/bin
 power-management:
 	pacman -S powertop tlp --noconfirm
 	systemctl enable tlp.service

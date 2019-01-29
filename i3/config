@@ -56,7 +56,7 @@ for_window [class=".*"] border pixel 4
 # misc
 exec xset r rate 180 40
 exec xrdb .Xresources
-exec feh --bg-scale /home/sam/Pictures/wallhaven-295990.png
+exec feh --bg-scale /home/sam/Pictures/CA63Qkm.jpg
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 

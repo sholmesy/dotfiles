@@ -41,7 +41,7 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord7 $nord7
+client.focused $nord1 $nord0 $nord4 $nord5 $nord5
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
 client.focused_inactive $nord1 $nord0 $nord4 $nord0 $nord0
 client.urgent $nord1 $nord0 $nord4 $nord0 $nord0
@@ -148,13 +148,8 @@ bindsym $mod+Shift+m floating toggle
 bindsym $mod+m focus mode_toggle
 bindsym $mod+q kill
 bindsym $mod+Return exec urxvt
-bindsym $mod+t exec google-chrome-stable --app=https://notion.so
-bindsym $mod+g exec google-chrome-stable --app=https://google.com
+bindsym $mod+t exec chromium --app=https://notion.so
+bindsym $mod+g exec chromium --app=https://google.com
 bindsym $mod+space exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-
-# <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
-
-# Workspace 1
-exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'

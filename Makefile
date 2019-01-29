@@ -37,7 +37,7 @@ urxvt:
 	cp .Xresources /home/sam/
 	xrdb /home/sam/.Xresources
 	chown sam:sam /home/sam/.Xresources
-	pacman -S rxvt-unicode --noconfirm
+	pacman -S python-pywal rxvt-unicode --noconfirm
 keyboard:
 	cp .Xmodmap /home/sam/.Xmodmap
 	cp mac-keyboard.sh /usr/local/bin
@@ -48,8 +48,8 @@ ssh:
 	sudo -H -u sam bash -c 'ssh-keygen'
 	sudo -H -u sam bash -c 'cat ~/.ssh/id_rsa.pub'
 apps:
-	pacman -S aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S google-chrome discord slack-desktop --noconfirm'
+	pacman -S hicolor-icon-theme chromium aurman --noconfirm
+	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
 chromium:
 	cp scripts/github.sh /usr/local/bin
 	cp scripts/hn.sh /usr/local/bin

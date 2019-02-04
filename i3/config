@@ -57,12 +57,13 @@ for_window [class=".*"] border pixel 4
 exec xset r rate 180 40
 exec xrdb .Xresources
 exec wal -i /home/sam/dotfiles/orange-colors.jpg
+exec_always --no-startup-id /home/sam/.config/polybar/launch.sh
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 
 # gaps
 
-gaps inner 30
+gaps inner 0
 gaps outer 0
 
 # no gaps when only one window is open

@@ -23,16 +23,17 @@ bash:
 	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
 	pacman -S ripgrep xclip fzf neofetch autojump ranger tig ctags rofi feh --noconfirm
 	pacman -S aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S ttf-spacemono cava --noconfirm'
+	sudo -H -u sam bash -c 'aurman -S ttf-spacemono cava pick --noconfirm'
 x:
 	cp .xinitrc /home/sam/
 	chown sam:sam /home/sam/.xinitrc
 window-manager:
 	pacman -S i3-gaps
-	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 --noconfirm'
+	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 polybar-git --noconfirm'
 	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
-	cp i3/workspace-1.json /home/sam/.config/i3/workspace-1.json
+	cp .polybar /home/sam/.config/polybar/config
+	cp scripts/start-poly.sh /home/sam/.config/polybar/launch.sh
 urxvt:
 	cp .Xresources /home/sam/
 	xrdb /home/sam/.Xresources
@@ -47,6 +48,7 @@ keyboard:
 	cp kbdmap /usr/share/X11/xkb/symbols/us
 	@echo 'xkb symbols need a reboot to fully take effect'
 apps:
+	pacman -R kalu
 	pacman -S hicolor-icon-theme chromium aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
 power-management:

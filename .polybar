@@ -42,14 +42,14 @@ tray-position =
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 5
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = fixed:spacemono=10;1
 font-1 = fixed:spacemono=10;1
@@ -59,7 +59,7 @@ modules-left = i3
 modules-center = 
 modules-right = wlan battery date
 
-tray-padding = 2
+tray-padding = 0
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -127,7 +127,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -189,7 +189,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = "«"
+format-prefix = " «"
 format-prefix-foreground = ${module/bspwm.label-focused-underline}
 format-underline = ${colors.foreground}
 
@@ -207,25 +207,25 @@ format-charging-underline  = ${colors.foreground}
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline  = ${colors.foreground}
 
-format-full-prefix = "«"
+format-full-prefix = " «"
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${colors.foreground}
 
-ramo-capacity-0 = "«"
-ramo-capacity-1 = "«"
-ramo-capacity-2 = "«"
-ramo-capacity-3 = "«"
+ramo-capacity-0 = " «"
+ramo-capacity-1 = " «"
+ramo-capacity-2 = " «"
+ramo-capacity-3 = " «"
 ramp-capacity-foreground = ${module/bspwm.label-focused-underline}
 
-animation-charging-0 = "«"
-animation-charging-1 = "«"
-animation-charging-2 = "«"
+animation-charging-0 = " «"
+animation-charging-1 = " «"
+animation-charging-2 = " «"
 animation-charging-foreground = ${module/bspwm.label-focused-underline}
 animation-charging-framerate = 750
 
-animation-discharging-0 = "«"
-animation-discharging-1 = "«"
-animation-discharging-2 = "«"
+animation-discharging-0 = " «"
+animation-discharging-1 = " «"
+animation-discharging-2 = " «"
 animation-discharging-foreground = ${module/bspwm.label-focused-underline}
 animation-discharging-framerate = 750
 

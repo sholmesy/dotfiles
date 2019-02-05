@@ -208,7 +208,7 @@ format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline  = ${colors.foreground}
 
 format-full-prefix = " «"
-format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${module/bspwm.label-focused-underline}
 format-full-underline = ${colors.foreground}
 
 ramo-capacity-0 = " «"

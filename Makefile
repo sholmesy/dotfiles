@@ -60,4 +60,5 @@ bluetooth:
 	btmgmt ssp of
 	gpasswd -a sam lp
 	rfkill unblock all
+	cp scripts/headphones.sh /usr/local/bin
 .PHONY: all

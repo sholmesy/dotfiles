@@ -1,4 +1,4 @@
-all: vim bash x window-manager urxvt keyboard apps power-management development bluetooth
+all: vim bash x window-manager urxvt keyboard apps development bluetooth
 vim:
 	pacman -S gvim --noconfirm
 	cp .vimrc /home/sam/
@@ -49,12 +49,8 @@ keyboard:
 	@echo 'xkb symbols need a reboot to fully take effect'
 apps:
 	pacman -R kalu
-	pacman -S hicolor-icon-theme chromium aurman --noconfirm
+	pacman -S hicolor-icon-theme opera opera-ffmpeg-codes aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
-power-management:
-	pacman -S powertop tlp --noconfirm
-	systemctl enable tlp.service
-	systemctl enable tlp-sleep.service
 development:
 	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
 	sudo -H -u sam bash -c 'aurman -S pgcli --noconfirm'

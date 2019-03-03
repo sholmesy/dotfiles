@@ -18,7 +18,7 @@ set $w5 "5"
 set $mod Mod1
 set $window container
 floating_modifier $mod
-font pango:spacemono 12
+font pango:spacemono 14
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
 

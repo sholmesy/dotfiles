@@ -48,8 +48,7 @@ keyboard:
 	cp kbdmap /usr/share/X11/xkb/symbols/us
 	@echo 'xkb symbols need a reboot to fully take effect'
 apps:
-	pacman -R kalu
-	pacman -S hicolor-icon-theme opera opera-ffmpeg-codes aurman --noconfirm
+	pacman -S hicolor-icon-theme opera opera-ffmpeg-codecs aurman --noconfirm
 	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
 development:
 	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
@@ -61,4 +60,10 @@ bluetooth:
 	gpasswd -a sam lp
 	rfkill unblock all
 	cp scripts/headphones.sh /usr/local/bin
+bumblebee:
+	pacman -S bumblebee mesa nvidia xf86-video-intel 
+	gpasswd -a sam bumblebee 
+	systemctl enable bumblebeed.service 
+	@echo 'Need to reboot to enable bumblebee'
+
 .PHONY: all

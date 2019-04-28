@@ -6,8 +6,8 @@
 ! |__/  \__/|__/       \_______/|_______/  \______/  \______/ |__/       \_______/ \_______/|_______/ 
 !
 *.cursorBlink       : 1
-*.font              : xft:spacemono:size=14
-*.boldfont          : xft:spacemono:size=14
+*.font              : xft:spacemono:size=32,xft:symbola:size=32
+*.boldfont          : xft:spacemono:size=32,xft:symbola:size=32
 *.letterSpace       : 0
 *.scrollBar         : false
 *.internalBorder    : 15
@@ -58,8 +58,8 @@
 *.color14: nord7
 *.color15: nord6
 
-rofi.font: spacemono regular 14
-rofi.boldfont: spacemono bold 14
+rofi.font: spacemono regular 32
+rofi.boldfont: spacemono bold 32
 rofi.color-window: nord1, nord1, nord0
 
 rofi.color-normal:  nord1, nord5, nord1, nord1, nord7

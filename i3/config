@@ -41,7 +41,7 @@ set $nord13 #EBCB8B
 set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
-client.focused $nord1 $nord0 $nord4 $nord5 $nord5
+client.focused $nord1 $nord0 $nord4 $nord15 $nord15
 client.unfocused $nord1 $nord0 $nord4 $nord0 $nord0
 client.focused_inactive $nord1 $nord0 $nord4 $nord0 $nord0
 client.urgent $nord1 $nord0 $nord4 $nord0 $nord0
@@ -56,7 +56,8 @@ for_window [class=".*"] border pixel 4
 # misc
 exec xset r rate 180 40
 exec xrdb .Xresources
-exec wal -i /home/sam/dotfiles/orange-colors.jpg
+exec wal -i /home/sam/dotfiles/aqua.png -n --saturate 1.0
+exec feh --bgscale /home/sam/dotfiles/background.png
 exec_always --no-startup-id /home/sam/.config/polybar/launch.sh
 
 # <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> #
@@ -84,6 +85,12 @@ bindsym $mod+Shift+h move left 1px
 bindsym $mod+Shift+j move down 1px
 bindsym $mod+Shift+k move up 1px
 bindsym $mod+Shift+l move right 1px
+
+bindsym $mod+Shift+o move workspace to output left
+bindsym $mod+Shift+p move workspace to output right
+bindsym $mod+Shift+u move workspace to output up
+bindsym $mod+Shift+i move workspace to output down
+
 
 # split
 

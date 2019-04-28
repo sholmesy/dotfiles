@@ -13,15 +13,19 @@ alias gr='git rebase'
 alias ga='git add'
 alias sg='git rev-parse --short=10 HEAD'
 alias cc='xclip -selection clipboard'
+alias k='kubectl'
 
 alias ag='rg -i --hidden'
 alias dco='docker-compose'
 alias rmpyc='sudo find . -name "*.pyc" -delete'
 alias jq='python -m json.tool'
 alias ls='ls --color=auto'
-alias pgfes='pgcli postgres://festicket:festicket@127.0.0.1/festicket'
-alias pgint='pgcli postgres://integrations:integrations@127.0.0.1/integrations'
 alias al='alsamixer'
+
+function venv() {
+    virtualenv `basename "$PWD"` -p python3
+    source `basename "$PWD"`/bin/activate
+}
 
 function cls() {
     vim $(ag "class $1\(" --line-number | awk -F  ":" '{print $1":"$2}')

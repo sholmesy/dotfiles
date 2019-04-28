@@ -30,10 +30,12 @@ x:
 window-manager:
 	pacman -S i3-gaps
 	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 polybar-git --noconfirm'
-	rm /home/sam/.config/i3/config
 	cp i3/config /home/sam/.config/i3/config
 	cp .polybar /home/sam/.config/polybar/config
 	cp scripts/start-poly.sh /home/sam/.config/polybar/launch.sh
+	cp scripts/monitors-on.sh /usr/local/bin
+	cp scripts/monitors-off.sh /usr/local/bin
+	cp scripts/lock.sh /usr/local/bin
 urxvt:
 	cp .Xresources /home/sam/
 	xrdb /home/sam/.Xresources
@@ -61,6 +63,7 @@ bluetooth:
 	rfkill unblock all
 	cp scripts/headphones.sh /usr/local/bin
 bumblebee:
+	pacman -R nouveau
 	pacman -S bumblebee mesa nvidia xf86-video-intel 
 	gpasswd -a sam bumblebee 
 	systemctl enable bumblebeed.service 

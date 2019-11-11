@@ -10,11 +10,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
 Plug 'kopischke/vim-fetch'
 Plug 'flazz/vim-colorschemes'
-Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'nicwest/vim-camelsnek'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 " Syntax
@@ -41,6 +41,8 @@ autocmd Filetype vue setlocal ts=2 sts=2 sw=2
 autocmd Filetype objc setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype less setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype tf setlocal ts=2 sts=2 sw=2
 filetype plugin indent on
 
 " Go vim plugin stuff
@@ -92,9 +94,6 @@ nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 set mouse=a
 
-"ALE
-let g:ale_completion_enabled = 1
-
 "bashrc loads
 let $BASH_ENV = "~/.bash_aliases"
 
@@ -110,5 +109,6 @@ set tags=tags;/
 set undofile
 set undodir=~/.vim/undodir
 
-let g:NERDTreeHijackNetrw = 0
-let g:ranger_replace_netrw = 1
+command! Behave execute "norm! yypV:Snek\<CR>Idef \<ESC>A(context):"
+autocmd BufWritePost *.py call flake8#Flake8()
+

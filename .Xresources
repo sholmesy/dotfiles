@@ -6,8 +6,8 @@
 ! |__/  \__/|__/       \_______/|_______/  \______/  \______/ |__/       \_______/ \_______/|_______/ 
 !
 *.cursorBlink       : 1
-*.font              : xft:spacemono:size=32,xft:symbola:size=32
-*.boldfont          : xft:spacemono:size=32,xft:symbola:size=32
+*.font              : xft:mono:size=14,xft:symbola:size=14
+*.boldfont          : xft:mono:size=14,xft:symbola:size=14
 *.letterSpace       : 0
 *.scrollBar         : false
 *.internalBorder    : 15
@@ -18,6 +18,7 @@
 *.pointerBlank      : True
 *.pointerBlankDelay : 1
 *.saveLines         : 8192
+*.dpi               : 220
 
 ! NORD
 #define nord0 #2E3440
@@ -37,29 +38,66 @@
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
+!*.foreground:   nord4
+!*.background:   nord0
+!*.cursorColor:  nord4
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+!*.color0: nord1
+!*.color1: nord11
+!*.color2: nord14
+!*.color3: nord13
+!*.color4: nord9
+!*.color5: nord15
+!*.color6: nord8
+!*.color7: nord5
+!*.color8: nord3
+!*.color9: nord11
+!*.color10: nord14
+!*.color11: nord13
+!*.color12: nord9
+!*.color13: nord15
+!*.color14: nord7
+!*.color15: nord6
 
-rofi.font: spacemono regular 32
-rofi.boldfont: spacemono bold 32
+! special
+*.foreground:   #ffffff
+*.background:   #002b36
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #002b36
+*.color8:       #fdf6e3
+
+! red
+*.color1:       #ff5c59
+*.color9:       #ff5c59
+
+! green
+*.color2:       #33ff99
+*.color10:      #33ff99
+
+! yellow
+*.color3:       #f7ce8c
+*.color11:      #f7ce8c
+
+! blue
+*.color4:       #71c1fc
+*.color12:      #71c1fc
+
+! magenta
+*.color5:       #6c71c4
+*.color13:      #6c71c4
+
+! cyan
+*.color6:       #2aa198
+*.color14:      #2aa198
+
+! white
+*.color7:       #fdf6e3
+*.color15:      #ffffff
+
+rofi.font: mono regular 24
+rofi.boldfont: mono bold 24
 rofi.color-window: nord1, nord1, nord0
 
 rofi.color-normal:  nord1, nord5, nord1, nord1, nord7

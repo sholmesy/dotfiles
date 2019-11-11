@@ -13,33 +13,8 @@ fi
 
 ## GENERAL OPTIONS ##
 
-# Prevent file overwrite on stdout redirection
-# Use `>|` to force redirection to an existing file
-set -o noclobber
-
-# Update window size after every command
-shopt -s checkwinsize
-
-# Automatically trim long paths in the prompt (requires Bash 4.x)
-PROMPT_DIRTRIM=2
-
-# Enable history expansion with space
-# E.g. typing !!<space> will replace the !! with your last command
-#bind Space:magic-space
-
 # Turn on recursive globbing (enables ** to recurse all directories)
 shopt -s globstar 2> /dev/null
-
-## SMARTER TAB-COMPLETION (Readline bindings) ##
-
-# Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
-
-# Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
-
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
 
 ## SANE HISTORY DEFAULTS ##
 
@@ -90,5 +65,22 @@ CDPATH="."
 shopt -s cdable_vars
 [[ -f ~/.bash_profile ]] && source ~/.bash_profile
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
-[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
-[ -f /usr/share/autojump/autojump.bash ] && source /usr/share/autojump/autojump.bash
+[[ -s /home/sam/.autojump/etc/profile.d/autojump.sh ]] && source /home/sam/.autojump/etc/profile.d/autojump.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc' ]; then . '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc'; fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Treat hyphens and underscores as equivalent
+bind "set completion-map-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"

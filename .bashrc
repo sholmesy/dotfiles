@@ -75,12 +75,3 @@ if [ -f '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-# Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
-
-# Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
-
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"

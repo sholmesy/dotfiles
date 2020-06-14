@@ -7,6 +7,8 @@ git:
 	git config --global core.excludesfile '.gitignore'
 	git config --global user.email "samholmesdev@gmail.com"
 	git config --global user.name "Sam Holmes"
+	ssh-keygen
+	cat ~/.ssh/id_rsa.pub | cc
 
 utils:
 	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python3 fzf autojump tig

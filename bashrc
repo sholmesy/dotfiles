@@ -64,8 +64,10 @@ CDPATH="."
 # Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
 shopt -s cdable_vars
 [[ -f ~/.bash_profile ]] && source ~/.bash_profile
-[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
-[[ -s /home/sam/.autojump/etc/profile.d/autojump.sh ]] && source /home/sam/.autojump/etc/profile.d/autojump.sh
+[[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.autojump.bash ]] && source ~/.autojump.bash
+[[ -f ~/.fzf-bindings.bash ]] && source ~/.fzf-bindings.bash
+[[ -f ~/.fzf-completion.bash ]] && source ~/.fzf-completion.bash
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc' ]; then . '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc'; fi
@@ -73,5 +75,4 @@ if [ -f '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc' ]; then . '/home/s
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc'; fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /etc/bash_completion ] && source /etc/bash_completion

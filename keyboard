@@ -1,0 +1,2 @@
+xmodmap ~/.local/bin/make-right-alt-control
+xmodmap ~/.local/bin/make-caps-iso

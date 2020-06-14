@@ -1,72 +1,70 @@
-all: vim bash x window-manager urxvt keyboard apps development bluetooth
-vim:
-	pacman -S gvim --noconfirm
-	cp .vimrc /home/sam/
-	curl -fLo /home/sam/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	mkdir -p /home/sam/.vim/undodir/
-	chown sam:sam /home/sam/.vimrc
-	chown -R sam:sam /home/sam/.vim/
-bash:
-	rm /home/sam/.bash*
-	cp .bash_profile /home/sam/
-	cp .bashrc /home/sam/
-	cp .bash_aliases /home/sam/
-	cp .inputrc /home/sam/
-	cp .gitignore_global /home/sam
-	chown sam:sam /home/sam/.gitignore_global
-	chown sam:sam /home/sam/.inputrc
-	chown sam:sam /home/sam/.bash_profile
-	chown sam:sam /home/sam/.bashrc
-	chown sam:sam /home/sam/.bash_aliases
-	sudo -H -u sam bash -c 'git config --global core.excludesfile /home/sam/.gitignore_global'
-	sudo -H -u sam bash -c 'git config --global user.name "Sam Holmes"'
-	sudo -H -u sam bash -c 'git config --global user.email samholmesdev@gmail.com'
-	pacman -S ripgrep xclip fzf neofetch autojump ranger tig ctags rofi feh --noconfirm
-	pacman -S aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S ttf-spacemono cava pick --noconfirm'
-x:
-	cp .xinitrc /home/sam/
-	chown sam:sam /home/sam/.xinitrc
-window-manager:
-	pacman -S i3-gaps
-	sudo -H -u sam bash -c 'aurman -S perl-anyevent-i3 polybar-git --noconfirm'
-	cp i3/config /home/sam/.config/i3/config
-	cp .polybar /home/sam/.config/polybar/config
-	cp scripts/start-poly.sh /home/sam/.config/polybar/launch.sh
-	cp scripts/monitors-on.sh /usr/local/bin
-	cp scripts/monitors-off.sh /usr/local/bin
-	cp scripts/lock.sh /usr/local/bin
-urxvt:
-	cp .Xresources /home/sam/
-	xrdb /home/sam/.Xresources
-	chown sam:sam /home/sam/.Xresources
-	pacman -S python-pywal rxvt-unicode --noconfirm
-	wal -i orange-colors.jpg
-keyboard:
-	cp .Xmodmap /home/sam/.Xmodmap
-	cp scripts/mac-keyboard.sh /usr/local/bin
-	cp scripts/thinkpad-keyboard.sh /usr/local/bin
-	cp scripts/anne-pro.sh /usr/local/bin
-	cp kbdmap /usr/share/X11/xkb/symbols/us
-	@echo 'xkb symbols need a reboot to fully take effect'
-apps:
-	pacman -S hicolor-icon-theme opera opera-ffmpeg-codecs aurman --noconfirm
-	sudo -H -u sam bash -c 'aurman -S discord slack-desktop --noconfirm'
-development:
-	pacman -S python-setuptools python-pip python-virtualenv docker docker-compose aws-cli go go-tools npm
-	sudo -H -u sam bash -c 'aurman -S pgcli --noconfirm'
-bluetooth:
-	pacman -Syu  pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils
-	rfkill block all
-	btmgmt ssp of
-	gpasswd -a sam lp
-	rfkill unblock all
-	cp scripts/headphones.sh /usr/local/bin
-bumblebee:
-	pacman -R nouveau
-	pacman -S bumblebee mesa nvidia xf86-video-intel 
-	gpasswd -a sam bumblebee 
-	systemctl enable bumblebeed.service 
-	@echo 'Need to reboot to enable bumblebee'
+# You need:
+# sudo apt install git
+# sudo apt install make
+# git clone https://github.com/sholmesy/dotfiles.git
 
-.PHONY: all
+git:
+	git config --global core.excludesfile '.gitignore'
+	git config --global user.email "samholmesdev@gmail.com"
+	git config --global user.name "Sam Holmes"
+
+utils:
+	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python3 fzf autojump tig
+	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
+	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
+	mv ~/key-bindings.bash .fzf-bindings.bash
+	mv ~/completion.bash .fzf-completion.bash
+	cp /usr/share/autojump/autojump.bash .autojump.bash
+
+i3:
+	sudo apt install i3xrocks-memory i3xrocks-battery regolith-look-lascaille i3status
+	mkdir -p ~/.config/regolith/i3
+	cp ~/dotfiles/i3 ~/.config/regolith/i3/config
+	cp ~/dotfiles/Xresources ~/.config/regolith/Xresources
+	xrdb ~/.config/regolith/Xresources
+	i3-msg reload
+	regolith-look refresh
+	@echo "Need to logout for all regolith/i3 changes to take affect"
+
+vim: utils
+	sudo apt install neovim
+	sudo apt remove vim
+	mkdir -p ~/.config/nvim
+	cp ~/dotfiles/vim ~/.config/nvim/init.vim
+	sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+browser: utils
+	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+	sudo apt update
+	sudo apt install brave-browser
+
+inputs:
+	sudo cp ~/dotfiles/kbdmap /usr/share/X11/xkb/symbols/us
+	mkdir -p ~/.local/bin
+	cp ~/dotfiles/keyboard ~/.local/bin/keyboard
+	cp ~/dotfiles/make-caps-iso ~/.local/bin/make-caps-iso
+	cp ~/dotfiles/make-right-alt-control ~/.local/bin/make-right-alt-control
+	cp ~/dotfiles/input ~/.inputrc
+	@echo "Need to logout for keyboard changes to take affect"
+
+gnome:
+	gsettings set org.gnome.desktop.interface enable-animations false
+
+bash:
+	cp ~/dotfiles/alias ~/.aliases
+	cp ~/dotfiles/bashrc ~/.bashrc
+	cp ~/dotfiles/bash_profile ~/.bash_profile
+
+cleanup:
+	sudo apt autoremove
+
+all:
+	make utils
+	make i3
+	make vim
+	make browser
+	make inputs
+	make gnome
+	make bash
+	make cleanup

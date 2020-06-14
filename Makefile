@@ -11,7 +11,7 @@ git:
 	cat ~/.ssh/id_rsa.pub | cc
 
 utils:
-	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python3 fzf autojump tig
+	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python3 fzf autojump tig acpi
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
 	mv ~/key-bindings.bash .fzf-bindings.bash
@@ -27,6 +27,7 @@ i3:
 	i3-msg reload
 	regolith-look refresh
 	@echo "Need to logout for all regolith/i3 changes to take affect"
+	sudo cp ~/dotfiles/colors /etc/regolith/styles/lascaille/color 
 
 vim: utils
 	sudo apt install neovim

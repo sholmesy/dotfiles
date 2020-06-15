@@ -11,7 +11,7 @@ git:
 	cat ~/.ssh/id_rsa.pub | cc
 
 utils:
-	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python3 fzf autojump tig acpi
+	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python-dev python3-dev fzf autojump tig acpi
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
 	mv ~/key-bindings.bash .fzf-bindings.bash
@@ -29,14 +29,14 @@ i3:
 	@echo "Need to logout for all regolith/i3 changes to take affect"
 	sudo cp ~/dotfiles/colors /etc/regolith/styles/lascaille/color 
 
-vim: utils
+vim:
 	sudo apt install neovim
 	sudo apt remove vim
 	mkdir -p ~/.config/nvim
 	cp ~/dotfiles/vim ~/.config/nvim/init.vim
 	sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-browser: utils
+browser:
 	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 	sudo apt update
@@ -59,6 +59,32 @@ bash:
 	cp ~/dotfiles/bashrc ~/.bashrc
 	cp ~/dotfiles/bash_profile ~/.bash_profile
 
+google:
+	wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+	chmod +x cloud_sql_proxy
+	mv cloud_sql_proxy ~/.local/bin
+	echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+	sudo apt-get install ca-certificates gnupg
+	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+	sudo apt-get update && sudo apt-get install google-cloud-sdk
+	gcloud init
+	gcloud auth login
+	gcloud auth application-default login
+
+k8:
+	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	sudo apt-get update
+	sudo apt-get install -y kubectl
+	wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+	chmod +x kubectx
+	mv kubectx ~/.local/bin/kubectx
+	wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
+	chmod +x kubens
+	mv kubens ~/.local/bin/kubens
+	gcloud container clusters get-credentials primary --zone europe-west1-b --project platform-v2-project
+	gcloud container clusters get-credentials production --zone europe-west2-b --project platform-v2-project
+
 cleanup:
 	sudo apt autoremove
 
@@ -70,4 +96,6 @@ all:
 	make inputs
 	make gnome
 	make bash
+	make google
+	make k8
 	make cleanup

@@ -5,3 +5,5 @@ TAGS
 tags
 .tags
 !tags/
+venv.*
+.env

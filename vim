@@ -92,7 +92,7 @@ nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
-set mouse=a
+set mouse=
 
 "bashrc loads
 let $BASH_ENV = "~/.bash_aliases"

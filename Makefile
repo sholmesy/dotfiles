@@ -4,14 +4,16 @@
 # git clone https://github.com/sholmesy/dotfiles.git
 
 git:
-	git config --global core.excludesfile '.gitignore'
 	git config --global user.email "samholmesdev@gmail.com"
 	git config --global user.name "Sam Holmes"
+	cp ~/dotfiles/gitignore ~/.gitignore_global
+	git config --global core.excludesfile '~/.gitignore_global'
 	ssh-keygen
 	cat ~/.ssh/id_rsa.pub | cc
+	@echo "Public key copied to clipboard"
 
 utils:
-	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python-dev python3-dev fzf autojump tig acpi
+	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python-dev python3-dev fzf autojump tig acpi flake8 jq pgcli ca-certificates gnupg
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
 	mv ~/key-bindings.bash .fzf-bindings.bash
@@ -24,10 +26,10 @@ i3:
 	cp ~/dotfiles/i3 ~/.config/regolith/i3/config
 	cp ~/dotfiles/Xresources ~/.config/regolith/Xresources
 	xrdb ~/.config/regolith/Xresources
+	sudo cp ~/dotfiles/colors /etc/regolith/styles/lascaille/color 
 	i3-msg reload
 	regolith-look refresh
 	@echo "Need to logout for all regolith/i3 changes to take affect"
-	sudo cp ~/dotfiles/colors /etc/regolith/styles/lascaille/color 
 
 vim:
 	sudo apt install neovim
@@ -64,7 +66,6 @@ google:
 	chmod +x cloud_sql_proxy
 	mv cloud_sql_proxy ~/.local/bin
 	echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-	sudo apt-get install ca-certificates gnupg
 	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 	sudo apt-get update && sudo apt-get install google-cloud-sdk
 	gcloud init

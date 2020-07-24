@@ -15,18 +15,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'nicwest/vim-camelsnek'
 Plug 'nvie/vim-flake8'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 " Syntax
 syntax enable
 set nowrap
+set foldmethod=syntax
+let g:SimpylFold_fold_import = 0
 
 " Indenting
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
 
 nnoremap x "_x
 xnoremap x "_x
@@ -100,15 +103,13 @@ let $BASH_ENV = "~/.bash_aliases"
 set rtp+=~/.fzf
 
 nnoremap <Leader>/ :Rg <CR>
-nnoremap <Leader>dbf :!pgfes <CR>
-nnoremap <Leader>dbi :!pgint <CR>
 
 nnoremap <Leader>s :e#<CR>
 nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>f za
 set tags=tags;/
 set undofile
 set undodir=~/.vim/undodir
 
 command! Behave execute "norm! yypV:Snek\<CR>Idef \<ESC>A(context):"
 autocmd BufWritePost *.py call flake8#Flake8()
-

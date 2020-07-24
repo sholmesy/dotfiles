@@ -112,13 +112,15 @@ bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+b workspace " Brave "
 bindsym $mod+s workspace " Slack "
-bindsym $mod+t workspace " Tasks "
+bindsym $mod+o workspace " Org Mode "
 
 ## Navigate // Next Workspace // <> Tab ##
 bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 ## Navigate // Next Workspace // <><Alt> → ##
 bindsym $mod+$alt+Right workspace next
+bindsym $mod+$alt+Left workspace prev
 
 ###############################################################################
 # Window and Workspace Configuration
@@ -131,7 +133,7 @@ bindsym $mod+Up move workspace to output up
 bindsym $mod+Right move workspace to output right
 
 ## Modify // Next Window Orientation // <> Backspace ##
-bindsym $mod+Backspace split toggle
+bindsym $mod+v split toggle
 
 ## Modify // Window Fullscreen Toggle // <> f ##
 bindsym $mod+f fullscreen toggle
@@ -146,7 +148,7 @@ bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+b move container to workspace " Brave "
 bindsym $mod+Shift+s move container to workspace " Slack "
-bindsym $mod+Shift+t move container to workspace " Tasks "
+bindsym $mod+Shift+o move container to workspace " Org Mode "
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -26,3 +26,5 @@ function venv() {
 function v() {
     nvim $1
 }
+
+complete -F __start_kubectl k

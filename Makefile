@@ -13,12 +13,12 @@ git:
 	@echo "Public key copied to clipboard"
 
 utils:
-	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python python-dev python3-dev fzf autojump tig acpi flake8 jq pgcli ca-certificates gnupg
+	sudo apt install ripgrep feh exuberant-ctags apt-transport-https curl build-essential python3 fzf autojump tig acpi flake8 jq pgcli ca-certificates gnupg
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
 	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
-	mv ~/key-bindings.bash .fzf-bindings.bash
-	mv ~/completion.bash .fzf-completion.bash
-	cp /usr/share/autojump/autojump.bash .autojump.bash
+	mv key-bindings.bash ~/.fzf-bindings.bash
+	mv completion.bash ~/.fzf-completion.bash
+	cp /usr/share/autojump/autojump.bash ~/.autojump.bash
 
 i3:
 	sudo apt install i3xrocks-memory i3xrocks-battery regolith-look-lascaille i3status
@@ -57,11 +57,12 @@ gnome:
 	gsettings set org.gnome.desktop.interface enable-animations false
 
 bash:
-	cp ~/dotfiles/alias ~/.aliases
+	cp ~/dotfiles/alias ~/.bash_aliases
 	cp ~/dotfiles/bashrc ~/.bashrc
 	cp ~/dotfiles/bash_profile ~/.bash_profile
 
 google:
+	mkdir -p ~/.local/bin
 	wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
 	chmod +x cloud_sql_proxy
 	mv cloud_sql_proxy ~/.local/bin
@@ -73,16 +74,17 @@ google:
 	gcloud auth application-default login
 
 k8:
+	mkdir -p ~/.local/bin
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 	sudo apt-get update
 	sudo apt-get install -y kubectl
 	wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
 	chmod +x kubectx
-	mv kubectx ~/.local/bin/kubectx
+	mv kubectx ~/.local/bin/
 	wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
 	chmod +x kubens
-	mv kubens ~/.local/bin/kubens
+	mv kubens ~/.local/bin/
 	gcloud container clusters get-credentials primary --zone europe-west1-b --project platform-v2-project
 	gcloud container clusters get-credentials production --zone europe-west2-b --project platform-v2-project
 

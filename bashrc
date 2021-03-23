@@ -63,8 +63,7 @@ CDPATH="."
 # This allows you to bookmark your favorite places across the file system
 # Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
 shopt -s cdable_vars
-[[ -f ~/.bash_profile ]] && source ~/.bash_profile
-[[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.autojump.bash ]] && source ~/.autojump.bash
 [[ -f ~/.fzf-bindings.bash ]] && source ~/.fzf-bindings.bash
 [[ -f ~/.fzf-completion.bash ]] && source ~/.fzf-completion.bash
@@ -76,3 +75,7 @@ if [ -f '/home/sam/.local/bin/google-cloud-sdk/path.bash.inc' ]; then . '/home/s
 if [ -f '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sam/.local/bin/google-cloud-sdk/completion.bash.inc'; fi
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+source <(kubectl completion bash)
+eval "$(starship init bash)"
+
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"

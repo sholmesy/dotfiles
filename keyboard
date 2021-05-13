@@ -1,3 +1,0 @@
-xmodmap ~/.local/bin/make-right-alt-control
-xmodmap ~/.local/bin/make-caps-iso
-xset r rate 180 40

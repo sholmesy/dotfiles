@@ -13,6 +13,7 @@ alias sg='git rev-parse --short=10 HEAD'
 alias cc='xclip -selection clipboard'
 alias k='kubectl'
 alias o='xdg-open'
+alias vim='nvim'
 
 alias ag='rg -i --hidden'
 alias rmpyc='sudo find . -name "*.pyc" -delete'

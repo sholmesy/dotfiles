@@ -14,7 +14,7 @@
             "tabColor": "#262626",
             "startingDirectory": "~",
             "commandline" : "wsl.exe",
-            "fontFace": "CaskaydiaCove Nerd Font Mono",
+            "fontFace": "CaskaydiaCove NF",
             "fontSize": 18,
             "scrollbarState": "hidden"
         },

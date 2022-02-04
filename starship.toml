@@ -1,21 +1,79 @@
-[git_branch]
-symbol = "🌿 "
-truncation_symbol = ""
-
-[git_status]
-conflicted = "🚩"
-ahead = "💨"
-behind = "😰"
-diverged = "😵"
-untracked = "🤷"
-stashed = "📦"
-modified = "📝"
-staged = '[++\($count\)](green)'
-renamed = "👅"
-deleted = "🗑️"
+[aws]
+symbol = "  "
+disabled = true
 
 [gcloud]
+symbol = "  "
 disabled = true
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
 
 [cmd_duration]
 disabled = true

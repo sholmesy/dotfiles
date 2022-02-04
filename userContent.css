@@ -1,0 +1,5 @@
+:root{ scrollbar-width: none !important }
+
+@-moz-document domain(news.ycombinator.com) {
+    body { background-color: #f6f6ef }
+}

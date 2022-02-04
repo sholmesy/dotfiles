@@ -14,18 +14,25 @@ alias cc='xclip -selection clipboard'
 alias k='kubectl'
 alias o='xdg-open'
 alias vim='nvim'
+alias jo='/usr/bin/jo'
 
 alias ag='rg -i --hidden'
-alias rmpyc='sudo find . -name "*.pyc" -delete'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
+alias ls='exa --icons'
 
 function venv() {
     virtualenv venv.`basename "$PWD"` -p python3
     source venv.`basename "$PWD"`/bin/activate
+    pip install neovim
 }
 
 function v() {
     nvim $1
+}
+
+function kcurl() {
+	k run -it --restart='Never' kcurlify --image=curlimages/curl --command -- curl $@
+	k delete pods kcurlify
 }
 
 complete -F __start_kubectl k

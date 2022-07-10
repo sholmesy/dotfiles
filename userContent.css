@@ -1,5 +1,120 @@
-:root{ scrollbar-width: none !important }
+@namespace "http://www.w3.org/1999/xhtml";
 
-@-moz-document domain(news.ycombinator.com) {
-    body { background-color: #f6f6ef }
+:root{
+    scrollbar-width: none !important;
+    --dracula-bg: #282a36;
+    --dracula-line: #44475a;
+    --dracula-selection: #44475a;
+    --dracula-fg: #f8f8f2;
+    --dracula-comment: #6272a4;
+    --dracula-cyan: #8be9fd;
+    --dracula-green: #50fa7b;
+    --dracula-orange: #ffb86c;
+    --dracula-pink: #ff79c6;
+    --dracula-purple: #bd93f9;
+    --dracula-red: #ff5555;
+    --dracula-yellow: #f1fa8c;
+    --dracula-black: #21222C;
+}
+
+@-moz-document domain("news.ycombinator.com")
+{
+  ::-moz-selection
+  {
+    background: var(--dracula-comment) !important;
+    color: var(--dracula-fg) !important;
+  }
+
+  body
+  {
+    margin: 0;
+  }
+
+  .text-shadow
+  {
+    text-shadow: black 0px 1px 3px !important;
+  }
+
+  td.default a
+  {
+    text-shadow: black 0px 1px 3px !important;
+  }
+
+  td.default span.comhead a,
+  td.subtext a
+  {
+    font-weight: bold;
+    text-shadow: black 0px 1px 3px !important;
+  }
+
+  body > center > table > tbody > tr:first-child > td
+  {
+    background-color: var(--dracula-black) !important;
+  }
+
+  body > center > table > tbody > tr:first-child > td *
+  {
+    color: var(--dracula-fg) !important;
+  }
+
+  .title
+  {
+    font-size: 12pt;
+  }
+
+  .title a .sitestr
+  {
+    color: var(--dracula-purple) !important;
+  }
+
+  .title *,
+  .comment *
+  {
+    color: var(--dracula-fg) !important;
+  }
+
+  .title a,
+  .comment a
+  {
+    text-shadow: black 0px 1px 3px !important;
+    color: var(--dracula-fg) !important;
+  }
+
+  .title a:visited,
+  .comment a:visited
+  {
+    color: var(--dracula-line) !important;
+  }
+
+  .yclinks a
+  {
+    color: var(--dracula-red) !important;
+  }
+
+  .subtext a,
+  .subtext span
+  {
+    text-shadow: black 0px 1px 3px !important;
+  }
+
+  .subtext span
+  {
+    color: var(--dracula-pink) !important;
+  }
+
+  a[href^=item]
+  {
+    color: var(--dracula-cyan) !important;
+  }
+
+  a[href^=user]
+  {
+    color: var(--dracula-orange) !important;
+  }
+
+  body,
+  body > center > table
+  {
+    background-color: var(--dracula-black) !important;
+  }
 }

@@ -28,9 +28,7 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Plugin manager
 	use("nvim-lua/plenary.nvim") -- Base requirement
 	use("kyazdani42/nvim-web-devicons") -- Icons
-	use("ellisonleao/gruvbox.nvim") -- Color scheme
 	use("rose-pine/neovim") -- Color scheme
-	use("EdenEast/nightfox.nvim") -- Color scheme
 	use({ -- Treesitter
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -48,19 +46,17 @@ require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") -- Snippet engine for completion
 	use("terrortylor/nvim-comment") -- Commenting
 	use("tpope/vim-fugitive") -- Git stuff
-	use("jinh0/eyeliner.nvim") -- Jump by indicator
 	use("windwp/windline.nvim") -- Statusline
 	use("junegunn/fzf") -- Fuzzy search
+	use("folke/trouble.nvim") -- Diagnostics
 	use({
 		"junegunn/fzf.vim",
 		rtp = "/opt/hombrew/bin/fzf",
 	})
-	use("numToStr/FTerm.nvim")
 end)
 
 -- Colors & Icons
 require("nvim-web-devicons").setup()
-require("gruvbox").setup({ contrast = "hard" })
 require("rose-pine").setup({})
 require("wlsample.airline")
 vim.cmd("colorscheme rose-pine")
@@ -127,11 +123,17 @@ cmp.setup.cmdline(":", {
 })
 
 -- Give LSPs completion capabilities
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 require("lspconfig").jedi_language_server.setup({
 	capabilities = capabilities,
 })
-require("lspconfig").terraformls.setup({
+require("lspconfig").gopls.setup({
+	capabilities = capabilities,
+})
+require("lspconfig").tsserver.setup({
+	capabilities = capabilities,
+})
+require("lspconfig").clangd.setup({
 	capabilities = capabilities,
 })
 
@@ -148,13 +150,14 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true, -- Force install if not already
 	highlight = { enable = true, disable = { "sql" } }, -- Use TS highlighting
 })
-require("eyeliner").setup({ highlight_on_key = true })
 
 -- Mappings
 -- Quit
 vim.api.nvim_set_keymap("n", "<C-q>", ":q!<CR>", {})
 -- Show quick docs in hover
 vim.api.nvim_set_keymap("n", "H", ":lua vim.lsp.buf.hover()<CR>", {})
+-- Show errors in quickfix
+vim.api.nvim_set_keymap("n", "K", ":Trouble<CR>", {})
 -- Show references in quickfix
 vim.api.nvim_set_keymap("n", "L", ":lua vim.lsp.buf.references()<CR>", {})
 -- Go to definition
@@ -163,7 +166,7 @@ vim.api.nvim_set_keymap("n", "<C-]>", ":lua vim.lsp.buf.definition()<CR>", {})
 vim.api.nvim_set_keymap("n", "W", "<C-W>w", {})
 -- Trigger FZF
 vim.api.nvim_set_keymap("n", "<C-f>", ":Rg<CR>", {})
--- Trigger FZF
+-- Trigger Explorer
 vim.api.nvim_set_keymap("n", "<C-e>", ":Explore<CR>", {})
 
 -- Autocommands
@@ -177,13 +180,14 @@ require("null-ls").setup({
 	sources = {
 		require("null-ls").builtins.formatting.stylua, -- Lua
 		require("null-ls").builtins.formatting.black, -- Python
-		require("null-ls").builtins.formatting.sqlfluff.with({ -- SQL
-			extra_args = { "--dialect", "postgres" },
-		}),
+		-- require("null-ls").builtins.formatting.sqlfluff.with({ -- SQL
+		-- 	extra_args = { "--dialect", "postgres" },
+		-- }),
 		require("null-ls").builtins.diagnostics.luacheck, -- Lua
 		require("null-ls").builtins.diagnostics.flake8, -- Python
-		require("null-ls").builtins.diagnostics.sqlfluff.with({ -- SQL
-			extra_args = { "--dialect", "postgres" },
-		}),
+		require("null-ls").builtins.diagnostics.jsonlint, -- JSON
+		-- require("null-ls").builtins.diagnostics.sqlfluff.with({ -- SQL
+		-- 	extra_args = { "--dialect", "postgres" },
+		-- }),
 	},
 })

@@ -1,79 +1,84 @@
-[aws]
-symbol = "  "
-disabled = true
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[gcloud]
-symbol = "  "
-disabled = true
+format = """
+[](orange)\
+$username\
+[](bg:yellow fg:orange)\
+$directory\
+[](bg:green fg:yellow)\
+$git_branch\
+[](bg:blue fg:green)\
+$golang\
+$python\
+$nodejs\
+$c\
+[](bg:black fg:blue)\
+$line_break$character"""
 
-[conda]
-symbol = " "
+palette = 'gruvbox_dark_material'
 
-[dart]
-symbol = " "
+[palettes.gruvbox_dark_material]
+black   = "#1d2021"
+grey    = "#32302f"
+white   = "#d4be98"
+blue    = '#7daea3'
+cyan    = '#89b482'
+green   = '#a9b665'
+orange  = '#e78a4e'
+magenta = '#d3869b'
+red     = '#ea6962'
+yellow  = '#d8a657'
+
+[username]
+show_always = true
+style_user = "bg:orange fg:black"
+style_root = "bg:orange fg:black"
+format = '[🐨](fg:black bg:orange)[ $user ]($style)'
 
 [directory]
-read_only = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+style = "fg:black bg:yellow"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [git_branch]
-symbol = " "
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol $branch ](fg:black bg:green)]($style)'
 
-[golang]
-symbol = " "
+[nodejs]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
+[c]
+symbol = " "
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [rust]
-symbol = " "
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
-[scala]
-symbol = " "
+[golang]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
-[shlvl]
-symbol = " "
+[python]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
-[swift]
-symbol = "ﯣ "
+[line_break]
+disabled = false
 
-[cmd_duration]
-disabled = true
+[character]
+disabled = false
+success_symbol = '[⮚](bold fg:green)'
+error_symbol = '[⮚](bold fg:red)'
+vimcmd_symbol = '[⮚](bold fg:orange)'
+vimcmd_visual_symbol = '[⮚](bold fg:magenta)'
+vimcmd_replace_one_symbol = '[⮚](bold fg:blue)'
+vimcmd_replace_symbol = '[⮚](bold fg:blue)'

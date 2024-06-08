@@ -1,0 +1,13 @@
+# This is the reference file for all other configs to pull from.
+# 10 colors, can be used as 8 colors + FG & BG.
+[colors]
+orange  = "#e78a4e"
+yellow  = "#d8a657"
+green   = "#a9b665"
+cyan    = "#89b482"
+blue    = "#7daea3"
+magenta = "#d3869b"
+red     = "#ea6962"
+black   = "#1d2021"
+grey    = "#32302f"
+white   = "#d4be98"

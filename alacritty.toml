@@ -1,0 +1,40 @@
+[shell]
+program = "wsl ~"
+
+[window]
+decorations = "None"
+padding = { x = 5, y = 5 }
+
+[font]
+normal = { family = "SFMono Nerd Font", style = "Bold" }
+size = 12.9
+
+[env]
+TERM = "xterm-256color"
+
+[colors.primary]
+background = "#1d2021"
+foreground = "#d4be98"
+
+# Normal colors
+[colors.normal]
+black   = "#1d2021"
+red     = "#ea6962"
+green   = "#a9b665"
+yellow  = "#d8a657"
+blue    = "#7daea3"
+magenta = "#d3869b"
+cyan    = "#89b482"
+white   = "#d4be98"
+
+# Bright colors (same as normal colors)
+[colors.bright]
+black   = "#1d2021"
+red     = "#ea6962"
+green   = "#a9b665"
+yellow  = "#d8a657"
+blue    = "#7daea3"
+magenta = "#d3869b"
+cyan    = "#89b482"
+white   = "#d4be98"
+

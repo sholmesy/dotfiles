@@ -30,8 +30,8 @@ function gb; git branch | cut -c 3- | fzf | xargs git checkout; end
 function sg; git rev-parse --short=10 HEAD; end
 
 # Environment
-set -gx EDITOR ~/.local/bin/nvim-linux64/bin/nvim
-set -gx VISUAL ~/.local/bin/nvim-linux64/bin/nvim
+set -gx EDITOR ~/.local/bin/nvim
+set -gx VISUAL ~/.local/bin/nvim
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH ~/.local/share $PATH
 set -gx PATH ~/.local/share/nvm/v22.2.0/bin $PATH

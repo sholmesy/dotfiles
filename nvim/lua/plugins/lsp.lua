@@ -11,6 +11,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
 })
 
+-- Removes the gutter error signs
+vim.diagnostic.config({
+    signs = false,
+})
 
 return {
     "neovim/nvim-lspconfig",
@@ -24,10 +28,10 @@ return {
         "williamboman/mason-lspconfig",
         config = function()
             local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+            capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls" },
+                ensure_installed = { "lua_ls", "gopls", "jedi_language_server" },
                 automatic_installation = true,
             })
             require("mason-lspconfig").setup_handlers({
@@ -36,24 +40,21 @@ return {
                         capabilities = capabilities,
                     })
                 end,
-                -- Lua
                 ["lua_ls"] = function()
                     require("lspconfig")["lua_ls"].setup({
                         capabilities = capabilities,
                         settings = {
                             Lua = {
-                                diagnostics = { disable = { 'missing-fields' } },
+                                diagnostics = { disable = { "missing-fields" } },
                             }
                         }
                     })
                 end,
-                -- Go
                 ["gopls"] = function()
                     require("lspconfig")["gopls"].setup({
                         capabilities = capabilities,
                     })
                 end,
-                -- Python
                 ["jedi_language_server"] = function()
                     require("lspconfig")["jedi_language_server"].setup({
                         capabilities = capabilities,

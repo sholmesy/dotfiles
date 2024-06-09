@@ -10,10 +10,10 @@ return {
             { "github/copilot.vim" },
             { "nvim-lua/plenary.nvim" },
         },
+        event = "VeryLazy",
         config = function()
             local chat = require("CopilotChat")
             local settings = {
-                auto_insert_mode = true,
                 mappings = { complete = { insert = "" } },
                 model = "gpt-4",
                 window = {

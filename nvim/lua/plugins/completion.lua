@@ -3,6 +3,7 @@ vim.opt.completeopt = "menuone,noinsert,noselect"
 
 return {
     "hrsh7th/nvim-cmp",
+    event = "VeryLazy",
     dependencies = {
         -- Luasnip is the expansion engine
         "L3MON4D3/LuaSnip",
@@ -74,8 +75,5 @@ return {
                 { name = "cmdline" },
             },
         })
-
-
     end
 }
-
